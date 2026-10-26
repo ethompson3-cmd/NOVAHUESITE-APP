@@ -1,3 +1,7 @@
-body
-"background-color;#9b5fco"
-"h1 Color:#FFFFF;"
+body {
+background-color: #9B5FC0;
+}
+
+h1 {
+color: #FFFFFF;
+}

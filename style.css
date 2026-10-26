@@ -113,3 +113,65 @@ color: #FFFFFF;
                 font-size: 1rem;
             }
         }
+/* NovaHue Purple and Gold Theme */
+:root {
+--amethyst: #4F1E94;
+--lavender: #9B5FC0;
+--gold: #E6C56B;
+--white: #FFFFFF;
+}
+
+/* Type Selectors */
+body {
+background: linear-gradient(135deg, #4F1E94, #9B5FC0);
+color: var(--white);
+}
+
+h1 {
+color: var(--white);
+}
+
+/* Box Model: Element 1 */
+header {
+border: 2px solid var(--gold);
+padding: 28px 32px;
+margin: 0 auto;
+}
+
+/* Box Model: Element 2 */
+main {
+border: 2px solid var(--lavender);
+padding: 48px 32px;
+margin: 20px auto;
+}
+
+/* Class Selector and Box Model: Element 3 */
+.button {
+background-color: var(--amethyst);
+color: var(--white);
+
+    border: 2px solid var(--gold);
+
+    padding: 14px 22px;
+
+    margin: 12px 0;
+
+    border-radius: 8px;
+
+}
+
+.button:hover {
+
+    background-color: var(--lavender);
+
+}
+
+/* ID Selector */
+
+#store-status-btn {
+
+    outline: 2px solid var(--gold);
+
+    outline-offset: 3px;
+
+}

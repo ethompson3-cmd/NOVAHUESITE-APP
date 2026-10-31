@@ -175,3 +175,11 @@ color: var(--white);
     outline-offset: 3px;
 
 }
+@media (max-width: 768px) {
+nav {
+flex-direction: column;
+}
+  header {
+text-align: center;
+}
+}

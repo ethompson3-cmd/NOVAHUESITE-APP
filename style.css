@@ -223,3 +223,27 @@ white-space: normal;
 }
 }
 
+@media (min-width: 600px) and (max-width: 768px) {
+header {
+padding: 20px !important;
+gap: 16px !important;
+}
+
+.modes-container {
+display: flex !important;
+flex-direction: row !important;
+flex-wrap: wrap !important;
+justify-content: center !important;
+gap: 12px !important;
+}
+
+.mode-item {
+flex: 1 1 150px;
+width: auto !important;
+max-width: 220px;
+}
+
+main {
+padding: 30px !important;
+}
+}

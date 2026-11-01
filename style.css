@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
 body {
+  
 background-color: #9B5FC0;
 }
 
@@ -9,7 +11,7 @@ color: #FFFFFF;
 
   :root {
             color-scheme: light;
-            font-family: "Trebuchet MS", sans-serif;
+            font-family: "DM Sans", sans-serif;
             color: #20211d;
             background: #4f1e94;
         }
@@ -67,7 +69,7 @@ color: #FFFFFF;
             max-width: 700px;
             margin: 0;
             color: #294d3c;
-            font-family: Georgia, serif;
+            font-family: 'Playfair Display',serif;
             font-size: clamp(3rem, 7vw, 5.8rem);
             font-weight: normal;
             line-height: 1.02;

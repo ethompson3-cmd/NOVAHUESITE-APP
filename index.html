@@ -1,133 +1,257 @@
-<html lang="en" style="color: white;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nova Hue</title>
-    <link rel="stylesheet" href="style.css">
-   
+<!DOCTYPE html>
+<html lang="en" style="color: white;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova Hue</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body style="background-image: radial-gradient(circle at 30% 40%, rgb(255, 0, 234) 0%, transparent 20%), radial-gradient(circle at 70% 60%, rgb(0, 212, 255) 0%, transparent 25%), radial-gradient(circle, rgb(255, 247, 0) 0%, rgb(255, 138, 0) 10%, rgb(229, 46, 113) 30%, rgb(102, 16, 242) 60%, rgb(26, 26, 46) 100%); background-attachment: fixed; background-size: cover; color: white; background-blend-mode: screen;"><div id="bg-dimmer-overlay" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background-color: rgba(50, 0, 80, 0.6); z-index: -1; pointer-events: none; backdrop-filter: none;"></div>
-    <header style="background-color: black; color: white; justify-content: flex-start; gap: 40px;"><div style="display: flex; gap: 10px;"><div id="store-status-btn" style="display: flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 20px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); color: white; font-size: 0.8rem; font-weight: bold; cursor: pointer; visibility: visible; opacity: 1;"><span id="status-dot" style="width: 8px; height: 8px; background: rgb(74, 222, 128); border-radius: 50%; box-shadow: rgb(74, 222, 128) 0px 0px 6px;"></span> <span id="status-text">OPEN</span></div><div id="cash-counter-btn" style="display: none; align-items: center; padding: 6px 14px; border-radius: 20px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); color: white; font-size: 0.8rem; font-weight: bold; cursor: pointer; position: relative;">💵 Cash Counter<div id="drawer-balancing-dropdown" style="display: none; position: absolute; top: 100%; right: 0px; margin-top: 10px; background: white; color: rgb(51, 51, 51); padding: 20px; border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 30px; z-index: 5000; width: 320px; font-weight: normal;"></div></div></div>
-        <div class="brand" style="color: white; text-shadow: none; margin-right: 0px;">Nova Hue</div>
-        <div class="tagline" style="color: white; text-shadow: none; cursor: pointer; text-decoration: underline; margin-right: auto;">Capture Your Prism</div>
-    <div class="modes-container" style="display: flex; gap: 12px; align-items: center; margin-left: 0px; padding-left: 20px;"><div class="mode-item" style="padding: 6px 14px; border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 16px; font-size: 0.8rem; font-weight: 600; color: white; background: rgba(0, 0, 0, 0.2); cursor: pointer; transition: 0.2s; white-space: nowrap; position: relative; overflow: visible;">Client<div class="client-dropdown" style="display: none; position: absolute; top: 100%; left: 0px; margin-top: 8px; background: white; color: rgb(51, 51, 51); border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px; width: 200px; z-index: 2000; padding: 8px 0px; font-weight: normal;">
-    <div class="dropdown-item" style="padding: 8px 16px; cursor: pointer; hover: background: #f5f5f5;">
-      <a href="#" style="text-decoration: none; color: #4f1e94; font-weight: bold;">📅 Book an Appointment</a>
-    </div>
-    <div class="dropdown-item" style="padding: 8px 16px; cursor: pointer; border-top: 1px solid #eee;">
-      <span id="open-client-info">📝 Client Information</span>
-    </div>
-  </div></div><div class="mode-item" style="padding: 6px 14px; border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 16px; font-size: 0.8rem; font-weight: 600; color: white; background: rgba(0, 0, 0, 0.2); cursor: pointer; transition: 0.2s; white-space: nowrap; position: relative; overflow: visible;" data-unlocked="false">Stylist<div class="stylist-dropdown" style="display: none; position: absolute; top: 100%; left: 0px; margin-top: 8px; background: white; color: rgb(51, 51, 51); border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px; width: 260px; z-index: 2000; padding: 8px 0px 0px; font-weight: normal; text-align: left;">
-      <div class="dropdown-item" id="s-booking" style="padding: 10px 16px; cursor: pointer; border-top: none;">
-        🗓️ Appointment Booking &amp; Scheduling
-      </div>
-    
-      <div class="dropdown-item" id="s-calc" style="padding: 10px 16px; cursor: pointer; border-top: 1px solid #eee;">
-        🧪 Hair Color Formula Calculator
-      </div>
-    
-      <div class="dropdown-item" id="s-scanner" style="padding: 10px 16px; cursor: pointer; border-top: 1px solid #eee;">
-        🔍 Ingredient Scanner
-      </div>
-    
-      <div class="dropdown-item" id="s-clients" style="padding: 10px 16px; cursor: pointer; border-top: 1px solid #eee;">
-        👥 Client Records &amp; Management
-      </div>
-    
-      <div class="dropdown-item" id="s-inventory" style="padding: 10px 16px; cursor: pointer; border-top: 1px solid #eee;">
-        📦 Inventory Tracking
-      </div>
-    
-      <div class="dropdown-item" id="s-edu" style="padding: 10px 16px; cursor: pointer; border-top: 1px solid #eee;">
-        📚 Stylist Education
-      </div>
-    <div class="dropdown-item logout-action" style="padding: 10px 16px; cursor: pointer; border-top: 2px solid rgb(254, 226, 226); color: rgb(220, 38, 38); font-weight: bold; background: rgb(255, 245, 245);">🔓 Sign Out Stylist</div><div class="dropdown-close-btn" style="padding: 8px 16px; cursor: pointer; text-align: center; background: rgb(240, 240, 240); color: rgb(79, 30, 148); font-weight: bold; font-size: 0.8rem; border-top: 1px solid rgb(221, 221, 221); border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; text-transform: uppercase;">Close Menu ✖</div></div></div><div class="mode-item" style="padding: 6px 14px; border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 16px; font-size: 0.8rem; font-weight: 600; color: white; background: rgba(0, 0, 0, 0.2); cursor: pointer; transition: 0.2s; white-space: nowrap; position: relative; overflow: visible;" data-unlocked="false">Manager<div class="manager-dropdown" style="display: none; position: absolute; top: 100%; left: 0px; margin-top: 8px; background: white; color: rgb(51, 51, 51); border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px; width: 280px; z-index: 2000; padding: 8px 0px 0px; font-weight: normal; text-align: left;">
-      <div class="dropdown-item" id="m-emp-sched" style="padding: 10px 16px; cursor: pointer; border-top: none;">
-        🗓️ Employee Scheduling
-      </div>
-    
-      <div class="dropdown-item" id="m-emp-info" style="padding: 10px 16px; cursor: pointer; border-top: 1px solid #eee;">
-        👤 Employee Information
-      </div>
-    
-      <div class="dropdown-item" id="m-inventory" style="padding: 10px 16px; cursor: pointer; border-top: 1px solid #eee;">
-        📦 Inventory
-      </div>
-    
-      <div class="dropdown-item" id="m-taxes" style="padding: 10px 16px; cursor: pointer; border-top: 1px solid #eee;">
-        📄 Tax Information
-      </div>
-    
-      <div class="dropdown-item" id="m-reports" style="padding: 10px 16px; cursor: pointer; border-top: 1px solid #eee;">
-        📊 Reports
-      </div>
-    
-      <div class="dropdown-item" id="m-calc" style="padding: 10px 16px; cursor: pointer; border-top: 1px solid #eee;">
-        🧪 Hair Color Formula Calculator
-      </div>
-    
-      <div class="dropdown-item" id="m-scanner" style="padding: 10px 16px; cursor: pointer; border-top: 1px solid #eee;">
-        🔍 Ingredient Scanner
-      </div>
-    
-      <div class="dropdown-item" id="m-clients" style="padding: 10px 16px; cursor: pointer; border-top: 1px solid #eee;">
-        👥 Client Records &amp; Management
-      </div>
-    
-      <div class="dropdown-item" id="m-edu" style="padding: 10px 16px; cursor: pointer; border-top: 1px solid #eee;">
-        📚 Stylist Education
-      </div>
-    <div class="dropdown-item logout-action" style="padding: 10px 16px; cursor: pointer; border-top: 2px solid rgb(254, 226, 226); color: rgb(220, 38, 38); font-weight: bold; background: rgb(255, 245, 245);">🔓 Sign Out Manager</div><div class="dropdown-close-btn" style="padding: 8px 16px; cursor: pointer; text-align: center; background: rgb(240, 240, 240); color: rgb(79, 30, 148); font-weight: bold; font-size: 0.8rem; border-top: 1px solid rgb(221, 221, 221); border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; text-transform: uppercase;">Close Menu ✖</div></div></div></div></header>
-    <main style="color: white; opacity: 1;">
-        <p class="eyebrow" style="color: white;">Learn · Grow · Create</p>
-        <h1 style="color: white;">Welcome to Nova Hue.</h1>
-        <p class="intro" style="color: white;">A versatile space for cosmetologists to learn new skills, grow their business, and book more clients.</p>
-        <a class="button" href="mailto:hello@novahue.com" style="color: white;">Get started</a>
-    </main>
 
-<div id="prism-feed" style="display: none; position: fixed; top: 80px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 600px; height: 80vh; background: white; color: rgb(51, 51, 51); z-index: 1000; border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 20px; overflow-y: auto; padding: 20px; font-family: sans-serif;">
-  <div style="border-bottom: 1px solid #ddd; padding-bottom: 15px; margin-bottom: 20px;">
-    <h3 style="margin-top:0">Create Post (Stylist Mode)</h3>
-    <textarea id="post-text" placeholder="What's on your mind?" style="width:100%; height:60px; margin-bottom:10px;"></textarea>
-    <input type="file" id="post-image" accept="image/*" style="display:block; margin-bottom:10px;">
-    <button id="submit-post" style="background:#4f1e94; color:white; border:none; padding:8px 16px; border-radius:4px; cursor:pointer;">Post</button>
-  </div>
-  <div id="posts-list">
-    <div style="padding:15px; border:1px solid #eee; border-radius:8px; margin-bottom:10px;">
-      <strong>Stylist Sarah</strong>
-      <p>Just finished this amazing prism highlight!</p>
-      <div style="background:#eee; height:200px; display:flex; align-items:center; justify-content:center;">[Example Work Image]</div>
-    </div>
-  </div>
-<button id="close-feed" style="position:absolute; top:10px; right:10px;">X</button></div><div id="client-info-modal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 400px; background: white; color: rgb(51, 51, 51); padding: 24px; border-radius: 12px; box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 30px; z-index: 3000;">
-    <h3 style="margin-top:0; color:#4f1e94;">Client Information</h3>
-    <label for="client-name" style="display:block; margin-bottom:4px; font-size:0.8rem;">Full Name</label>
-    <input type="text" id="client-name" style="width:100%; margin-bottom:12px; padding:8px; border:1px solid #ddd; border-radius:4px;">
-    <label for="client-email" style="display:block; margin-bottom:4px; font-size:0.8rem;">Email Address</label>
-    <input type="email" id="client-email" style="width:100%; margin-bottom:12px; padding:8px; border:1px solid #ddd; border-radius:4px;">
-    <label for="client-phone" style="display: block; margin-bottom: 4px; font-size: 0.8rem;">Phone Number</label><input type="tel" id="client-phone" placeholder="(555) 000-0000" style="width: 100%; margin-bottom: 12px; padding: 8px; border: 1px solid rgb(221, 221, 221); border-radius: 4px;">
-    <label for="client-allergies" style="display: block; margin-bottom: 4px; font-size: 0.8rem;">Allergies</label><input type="text" id="client-allergies" placeholder="e.g. Latex, PPD, Fragrance" style="width: 100%; margin-bottom: 12px; padding: 8px; border: 1px solid rgb(221, 221, 221); border-radius: 4px;"><label style="display: block; margin-bottom: 4px; font-size: 0.8rem;">Current Medications</label><textarea id="client-medications" placeholder="List any medications that may affect hair/skin health" style="width: 100%; height: 60px; margin-bottom: 12px; padding: 8px; border: 1px solid rgb(221, 221, 221); border-radius: 4px;"></textarea><div id="sensitive-notes-section" style="display: none;"><label style="display:block; margin-bottom:4px; font-size:0.8rem;">Hair History / Notes</label><textarea style="width:100%; height:80px; margin-bottom:16px; padding:8px; border:1px solid #ddd; border-radius:4px;"></textarea></div>
-<button id="save-client-info" style="width:100%; background:#4f1e94; color:white; border:none; padding:10px; border-radius:4px; cursor:pointer; font-weight:bold;">Save Information</button>
-    <button id="close-client-info" style="width:100%; background:transparent; border:none; color:#666; margin-top:8px; cursor:pointer;">Cancel</button>
-  </div><div id="auth-modal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 320px; background: white; padding: 24px; border-radius: 12px; box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 40px; z-index: 6000; font-family: sans-serif; color: rgb(51, 51, 51);">
-    <h3 id="auth-title" style="margin-top:0; color:#4f1e94;">Manager Sign-In</h3>
-    <div style="margin-bottom: 12px;">
-        <label style="display:block; font-size:0.8rem; margin-bottom:4px;">Access Code</label>
-        <input type="password" id="auth-code-input" placeholder="••••••••" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px;">
-    </div>
-    <button id="auth-submit-btn" style="width:100%; background:#4f1e94; color:white; border:none; padding:12px; border-radius:6px; cursor:pointer; font-weight:bold;">Sign In</button>
-    <button id="auth-cancel-btn" style="width:100%; background:transparent; border:none; color:#666; margin-top:10px; cursor:pointer;">Cancel</button>
+<body style="background-image: radial-gradient(circle at 30% 40%, rgb(255, 0, 234) 0%, transparent 20%), radial-gradient(circle at 70% 60%, rgb(0, 212, 255) 0%, transparent 25%), radial-gradient(circle, rgb(255, 247, 0) 0%, rgb(255, 138, 0) 10%, rgb(229, 46, 113) 30%, rgb(102, 16, 242) 60%, rgb(26, 26, 46) 100%); background-attachment: fixed; background-size: cover; color: white; background-blend-mode: screen;">
+
+<div id="bg-dimmer-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(50, 0, 80, 0.6); z-index: -1; pointer-events: none;"></div>
+
+<header style="background-color: black; color: white; justify-content: flex-start; gap: 40px;">
+
+<div style="display: flex; gap: 10px;">
+
+<div id="store-status-btn" style="display: flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 20px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); color: white; font-size: 0.8rem; font-weight: bold; cursor: pointer;">
+<span id="status-dot" style="width: 8px; height: 8px; background: rgb(74, 222, 128); border-radius: 50%;"></span>
+<span id="status-text">OPEN</span>
 </div>
+
+<div id="cash-counter-btn" style="display: none; align-items: center; padding: 6px 14px; border-radius: 20px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); color: white; font-size: 0.8rem; font-weight: bold; cursor: pointer; position: relative;">
+💵 Cash Counter
+<div id="drawer-balancing-dropdown" style="display: none; position: absolute; top: 100%; right: 0; margin-top: 10px; background: white; color: #333; padding: 20px; border-radius: 8px; z-index: 5000; width: 320px;"></div>
+</div>
+
+</div>
+
+<div class="brand" style="color: white; text-shadow: none; margin-right: 0;">Nova Hue</div>
+
+<div class="tagline" style="color: white; text-shadow: none; cursor: pointer; text-decoration: underline; margin-right: auto;">
+Capture Your Prism
+</div>
+
+<div class="modes-container" style="display: flex; gap: 12px; align-items: center; margin-left: 0; padding-left: 20px;">
+
+<div class="mode-item" style="padding: 6px 14px; border: 1px solid rgba(255,255,255,.4); border-radius: 16px; font-size: .8rem; font-weight: 600; color: white; background: rgba(0,0,0,.2); cursor: pointer; position: relative; overflow: visible;">
+Client
+
+<div class="client-dropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 8px; background: white; color: #333; border-radius: 8px; width: 200px; z-index: 2000; padding: 8px 0; font-weight: normal;">
+
+<div class="dropdown-item" style="padding: 8px 16px; cursor: pointer;">
+<a href="#" style="text-decoration: none; color: #4f1e94; font-weight: bold;">📅 Book an Appointment</a>
+</div>
+
+<div class="dropdown-item" style="padding: 8px 16px; cursor: pointer; border-top: 1px solid #eee;">
+<span id="open-client-info">📝 Client Information</span>
+</div>
+
+</div>
+</div>
+
+<div class="mode-item" style="padding: 6px 14px; border: 1px solid rgba(255,255,255,.4); border-radius: 16px; font-size: .8rem; font-weight: 600; color: white; background: rgba(0,0,0,.2); cursor: pointer; position: relative; overflow: visible;" data-unlocked="false">
+Stylist
+
+<div class="stylist-dropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 8px; background: white; color: #333; border-radius: 8px; width: 260px; z-index: 2000; padding: 8px 0; font-weight: normal; text-align: left;">
+
+<div class="dropdown-item" id="s-booking" style="padding: 10px 16px; cursor: pointer;">🗓️ Appointment Booking &amp; Scheduling</div>
+<div class="dropdown-item" id="s-calc" style="padding: 10px 16px; cursor: pointer;">🧪 Hair Color Formula Calculator</div>
+<div class="dropdown-item" id="s-scanner" style="padding: 10px 16px; cursor: pointer;">🔍 Ingredient Scanner</div>
+<div class="dropdown-item" id="s-clients" style="padding: 10px 16px; cursor: pointer;">👥 Client Records &amp; Management</div>
+<div class="dropdown-item" id="s-inventory" style="padding: 10px 16px; cursor: pointer;">📦 Inventory Tracking</div>
+<div class="dropdown-item" id="s-edu" style="padding: 10px 16px; cursor: pointer;">📚 Stylist Education</div>
+
+<div class="dropdown-item logout-action" style="padding: 10px 16px; cursor: pointer; border-top: 2px solid #fee2e2; color: #dc2626; font-weight: bold; background: #fff5f5;">
+🔓 Sign Out Stylist
+</div>
+
+<div class="dropdown-close-btn" style="padding: 8px 16px; cursor: pointer; text-align: center; background: #f0f0f0; color: #4f1e94; font-weight: bold;">
+Close Menu ✖
+</div>
+
+</div>
+</div>
+
+<div class="mode-item" style="padding: 6px 14px; border: 1px solid rgba(255,255,255,.4); border-radius: 16px; font-size: .8rem; font-weight: 600; color: white; background: rgba(0,0,0,.2); cursor: pointer; position: relative; overflow: visible;" data-unlocked="false">
+Manager
+
+<div class="manager-dropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 8px; background: white; color: #333; border-radius: 8px; width: 280px; z-index: 2000; padding: 8px 0; font-weight: normal; text-align: left;">
+
+<div class="dropdown-item" id="m-emp-sched" style="padding: 10px 16px; cursor: pointer;">🗓️ Employee Scheduling</div>
+<div class="dropdown-item" id="m-emp-info" style="padding: 10px 16px; cursor: pointer;">👤 Employee Information</div>
+<div class="dropdown-item" id="m-inventory" style="padding: 10px 16px; cursor: pointer;">📦 Inventory</div>
+<div class="dropdown-item" id="m-taxes" style="padding: 10px 16px; cursor: pointer;">📄 Tax Information</div>
+<div class="dropdown-item" id="m-reports" style="padding: 10px 16px; cursor: pointer;">📊 Reports</div>
+<div class="dropdown-item" id="m-calc" style="padding: 10px 16px; cursor: pointer;">🧪 Hair Color Formula Calculator</div>
+<div class="dropdown-item" id="m-scanner" style="padding: 10px 16px; cursor: pointer;">🔍 Ingredient Scanner</div>
+<div class="dropdown-item" id="m-clients" style="padding: 10px 16px; cursor: pointer;">👥 Client Records &amp; Management</div>
+<div class="dropdown-item" id="m-edu" style="padding: 10px 16px; cursor: pointer;">📚 Stylist Education</div>
+
+<div class="dropdown-item logout-action" style="padding: 10px 16px; cursor: pointer; border-top: 2px solid #fee2e2; color: #dc2626; font-weight: bold; background: #fff5f5;">
+🔓 Sign Out Manager
+</div>
+
+<div class="dropdown-close-btn" style="padding: 8px 16px; cursor: pointer; text-align: center; background: #f0f0f0; color: #4f1e94; font-weight: bold;">
+Close Menu ✖
+</div>
+
+</div>
+</div>
+
+</div>
+</header>
+
+<main style="color: white; opacity: 1;">
+<p class="eyebrow" style="color: white;">Learn · Grow · Create</p>
+
+<h1 style="color: white;">Welcome to Nova Hue.</h1>
+
+<p class="intro" style="color: white;">
+A versatile space for cosmetologists to learn new skills, grow their business, and book more clients.
+</p>
+
+<a class="button" href="mailto:hello@novahue.com" style="color: white;">Get started</a>
+</main>
+
+<div id="prism-feed" style="display: none; position: fixed; top: 80px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 600px; height: 80vh; background: white; color: #333; z-index: 1000; border-radius: 8px; overflow-y: auto; padding: 20px; font-family: sans-serif;">
+
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 15px; margin-bottom: 20px;">
+
+<h2 style="margin-top:0">Create Post (Stylist Mode)</h2>
+
+<label for="post-text" style="display:block; margin-bottom:4px;">
+What's on your mind?
+</label>
+
+<textarea id="post-text" placeholder="What's on your mind?" style="width:100%; height:60px; margin-bottom:10px;"></textarea>
+
+<label for="post-image" style="display:block; margin-bottom:4px;">
+Upload a photo
+</label>
+
+<input type="file" id="post-image" accept="image/*" style="display:block; margin-bottom:10px;">
+
+<button id="submit-post" style="background:#4f1e94; color:white; border:none; padding:8px 16px; border-radius:4px; cursor:pointer;">
+Post
+</button>
+
+</div>
+
+<div id="posts-list">
+
+<div style="padding:15px; border:1px solid #eee; border-radius:8px; margin-bottom:10px;">
+<strong>Stylist Sarah</strong>
+<p>Just finished this amazing prism highlight!</p>
+
+<div style="background:#eee; height:200px; display:flex; align-items:center; justify-content:center;">
+[Example Work Image]
+</div>
+
+</div>
+</div>
+
+<button id="close-feed" style="position:absolute; top:10px; right:10px;" aria-label="Close feed">X</button>
+
+</div>
+
+<div id="client-info-modal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 400px; background: white; color: #333; padding: 24px; border-radius: 12px; z-index: 3000;">
+
+<h2 style="margin-top:0; color:#4f1e94;">Client Information</h2>
+
+<label for="client-name" style="display:block; margin-bottom:4px; font-size:.8rem;">
+Full Name
+</label>
+
+<input type="text" id="client-name" style="width:100%; margin-bottom:12px; padding:8px; border:1px solid #ddd; border-radius:4px;">
+
+<label for="client-email" style="display:block; margin-bottom:4px; font-size:.8rem;">
+Email Address
+</label>
+
+<input type="email" id="client-email" style="width:100%; margin-bottom:12px; padding:8px; border:1px solid #ddd; border-radius:4px;">
+
+<label for="client-phone" style="display:block; margin-bottom:4px; font-size:.8rem;">
+Phone Number
+</label>
+
+<input type="tel" id="client-phone" placeholder="(555) 000-0000" style="width:100%; margin-bottom:12px; padding:8px; border:1px solid #ddd; border-radius:4px;">
+
+<label for="client-allergies" style="display:block; margin-bottom:4px; font-size:.8rem;">
+Allergies
+</label>
+
+<input type="text" id="client-allergies" placeholder="e.g. Latex, PPD, Fragrance" style="width:100%; margin-bottom:12px; padding:8px; border:1px solid #ddd; border-radius:4px;">
+
+<label for="client-medications" style="display:block; margin-bottom:4px; font-size:.8rem;">
+Current Medications
+</label>
+
+<textarea id="client-medications" placeholder="List any medications that may affect hair/skin health" style="width:100%; height:60px; margin-bottom:12px; padding:8px; border:1px solid #ddd; border-radius:4px;"></textarea>
+
+<div id="sensitive-notes-section" style="display: none;">
+
+<label for="client-notes" style="display:block; margin-bottom:4px; font-size:.8rem;">
+Hair History / Notes
+</label>
+
+<textarea id="client-notes" style="width:100%; height:80px; margin-bottom:16px; padding:8px; border:1px solid #ddd; border-radius:4px;"></textarea>
+
+</div>
+
+<button id="save-client-info" style="width:100%; background:#4f1e94; color:white; border:none; padding:10px; border-radius:4px; cursor:pointer; font-weight:bold;">
+Save Information
+</button>
+
+<button id="close-client-info" style="width:100%; background:transparent; border:none; color:#666; margin-top:8px; cursor:pointer;">
+Cancel
+</button>
+
+</div>
+
+<div id="auth-modal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 320px; background: white; padding: 24px; border-radius: 12px; z-index: 6000; font-family: sans-serif; color: #333;">
+
+<h2 id="auth-title" style="margin-top:0; color:#4f1e94;">
+Manager Sign-In
+</h2>
+
+<div style="margin-bottom:12px;">
+
+<label for="auth-code-input" style="display:block; font-size:.8rem; margin-bottom:4px;">
+Access Code
+</label>
+
+<input type="password" id="auth-code-input" placeholder="••••••••" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px;">
+
+</div>
+
+<button id="auth-submit-btn" style="width:100%; background:#4f1e94; color:white; border:none; padding:12px; border-radius:6px; cursor:pointer; font-weight:bold;">
+Sign In
+</button>
+
+<button id="auth-cancel-btn" style="width:100%; background:transparent; border:none; color:#666; margin-top:10px; cursor:pointer;">
+Cancel
+</button>
+
+</div>
+
 <script>
 const modeItems = document.querySelectorAll('.mode-item');
-    modeItems.forEach(item => {
+
+modeItems.forEach(item => {
 item.addEventListener('click', () => {
-const menu = item.querySelector('.client-dropdown, .stylist-dropdown, .manager-dropdown');
+const menu = item.querySelector(
+'.client-dropdown, .stylist-dropdown, .manager-dropdown'
+);
 
 if (!menu) return;
 
 const isOpen = menu.style.display === 'block';
 
-document.querySelectorAll('.client-dropdown, .stylist-dropdown, .manager-dropdown').forEach(dropdown => {
+document.querySelectorAll(
+'.client-dropdown, .stylist-dropdown, .manager-dropdown'
+).forEach(dropdown => {
 dropdown.style.display = 'none';
 });
 
@@ -135,4 +259,6 @@ menu.style.display = isOpen ? 'none' : 'block';
 });
 });
 </script>
-</body></html>
+
+</body>
+</html>

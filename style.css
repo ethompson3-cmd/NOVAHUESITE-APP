@@ -24,12 +24,11 @@ min-height: 100vh;
 margin: 0;
 font-family: "DM Sans", sans-serif;
 color: var(--white);
-background: linear-gradient(
-135deg,
-#111B4C 0%,
-#2A0E4F 48%,
-#6A2C70 100%
-);
+background:
+radial-gradient(ellipse at 38% 25%, rgba(235, 65, 255, 0.85) 0%, transparent 48%),
+radial-gradient(ellipse at 95% 48%, rgba(73, 213, 255, 0.85) 0%, transparent 45%),
+radial-gradient(ellipse at 15% 85%, rgba(35, 65, 255, 0.8) 0%, transparent 55%),
+linear-gradient(135deg, #101B50 0%, #4431A0 50%, #7A3BC0 100%);
 background-attachment: fixed;
 }
 

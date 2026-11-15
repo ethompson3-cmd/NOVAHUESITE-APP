@@ -30,10 +30,17 @@
 <div class="brand" style="color: white; text-shadow: none; margin-right: 0;">Nova Hue</div>
 
 <div class="tagline" style="color: white; text-shadow: none; cursor: pointer; text-decoration: underline; margin-right: auto;">
-Capture Your Prism
+  <button type="button" id="open-gallery"> 
+    Capture Your Prism
+  </button>
 </div>
-
-<div class="modes-container" style="display: flex; gap: 12px; align-items: center; margin-left: 0; padding-left: 20px;">
+<div id="photo-gallery"> 
+  <label for="photo-upload">upload your Hairstyle photo:</label>
+  <input type="file" Id="photo-upload" accept="image/*">
+  <div id="gallery-images"></Div>
+  </div>
+  
+  <div class="modes-container" style="display: flex; gap: 12px; align-items: center; margin-left: 0; padding-left: 20px;">
 
 <div class="mode-item" style="padding: 6px 14px; border: 1px solid rgba(255,255,255,.4); border-radius: 16px; font-size: .8rem; font-weight: 600; color: white; background: rgba(0,0,0,.2); cursor: pointer; position: relative; overflow: visible;">
 Client
@@ -258,6 +265,21 @@ dropdown.style.display = 'none';
 menu.style.display = isOpen ? 'none' : 'block';
 });
 });
+const photoUpload = document.getElementById("photo-upload"); 
+  const galleryImages = document.getElementById("gallery=Images");
+  photoUpload.addEventListener("change", function() {
+    const file = photoUpload.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function() {
+      const img = document.createElement("img");
+img.src = reader.result;
+  img.alt = "selected hairstyle photo";
+      img.style.maxWidth ="200px";
+      galleryImages.appendChild(img);
+    };
+    reader.readAsDataURL(file);
+  });
 </script>
 
 </body>

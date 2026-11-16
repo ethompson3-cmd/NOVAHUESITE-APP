@@ -909,6 +909,18 @@ color: #ffffff !important;
 outline: 3px solid #ffd76a;
 outline-offset: 3px;
 }
+/* MILESTONE 3 — ABOUT FOOTER CONTRAST */
+
+.about-footer {
+background-color: #211433;
+color: #ffffff;
+border-radius: 8px;
+}
+
+.about-footer p {
+color: #ffffff;
+}
+
 
 
 

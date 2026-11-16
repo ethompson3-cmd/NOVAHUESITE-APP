@@ -536,5 +536,53 @@ background: linear-gradient(
 );
 background-attachment: fixed;
 }
+/* NOVAHUE NAVIGATION POSITION FIX */
+
+/* Keep navigation on the right */
+.modes-container {
+display: flex;
+justify-content: flex-end;
+align-items: center;
+gap: 12px;
+width: 100%;
+margin-left: auto;
+}
+
+/* Position each dropdown under its button */
+.mode-item {
+position: relative;
+}
+
+/* Prevent dropdowns from extending off screen */
+.dropdown {
+left: auto;
+right: 0;
+width: 280px;
+max-width: calc(100vw - 32px);
+z-index: 1000;
+}
+
+/* Keep dropdown buttons readable */
+.dropdown button {
+width: 100%;
+white-space: normal;
+text-align: left;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+.modes-container {
+justify-content: flex-end;
+flex-wrap: wrap;
+width: 100%;
+}
+
+.dropdown {
+left: auto;
+right: 0;
+max-width: calc(100vw - 32px);
+}
+}
+
 
 

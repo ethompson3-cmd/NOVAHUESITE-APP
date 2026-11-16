@@ -762,6 +762,66 @@ textarea:focus-visible {
 outline: 3px solid #E6B800;
 outline-offset: 3px;
 }
+/* MILESTONE 3 — FEATURES AND ABOUT CONTRAST */
+
+/* Features page: dark text on light cards */
+.features-main .features-intro,
+.features-main .feature-card,
+.features-main .feature-card p,
+.features-main .feature-note,
+.features-main .feature-note p {
+color: #20211d;
+}
+
+.features-main .feature-card h2,
+.features-main .feature-note h2,
+.features-main .feature-card a {
+color: #321454;
+}
+
+/* White text on the dark gradient outside cards */
+.features-main > h1,
+.features-main > .eyebrow,
+.features-main #tools-heading {
+color: #ffffff;
+}
+
+/* About page: dark text on light backgrounds */
+.about-page .about-hero,
+.about-page .about-section,
+.about-page .contact-section,
+.about-page .about-card {
+color: #25202c;
+}
+
+.about-page h1,
+.about-page h2,
+.about-page h3,
+.about-page .eyebrow {
+color: #28123f;
+}
+
+/* Keep navigation readable on dark headers */
+header .page-nav a,
+header .page-nav a:visited {
+background: #ffffff;
+color: #321454 !important;
+}
+
+header .page-nav a:hover,
+header .page-nav a:focus-visible,
+header .page-nav a[aria-current="page"] {
+background: #542a80;
+color: #ffffff !important;
+}
+
+/* Visible keyboard focus */
+a:focus-visible,
+button:focus-visible {
+outline: 3px solid #ffd76a;
+outline-offset: 3px;
+}
+
 
 
 

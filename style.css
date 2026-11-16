@@ -715,6 +715,54 @@ text-decoration: underline;
 outline: 3px solid #ffd76a;
 outline-offset: 3px;
 }
+/* Milestone 3: Accessibility contrast fixes */
+
+/* Navigation links */
+.page-nav a,
+.page-nav a:visited {
+color: #241238;
+background-color: #FFFFFF;
+text-decoration: underline;
+text-underline-offset: 4px;
+}
+
+/* Current page navigation */
+.page-nav a[aria-current="page"] {
+color: #FFFFFF;
+background-color: #542A80;
+padding: 8px 12px;
+border-radius: 6px;
+font-weight: 700;
+}
+
+/* Brand link */
+.brand,
+.brand:visited {
+color: #241238;
+}
+
+/* Footer text and links */
+footer {
+background-color: #352348;
+color: #FFFFFF;
+}
+
+footer a,
+footer a:visited {
+color: #FFFFFF;
+text-decoration: underline;
+}
+
+/* Visible keyboard focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+outline: 3px solid #E6B800;
+outline-offset: 3px;
+}
+
 
 
 

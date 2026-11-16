@@ -875,6 +875,41 @@ a:focus-visible,
 outline: 3px solid #ffd76a;
 outline-offset: 3px;
 }
+/* MILESTONE 3 — ABOUT PAGE HEADER CONTRAST */
+
+.about-header {
+background-color: #211433;
+}
+
+/* Nova Hue logo */
+.about-header .brand,
+.about-header .brand:visited {
+color: #ffffff !important;
+}
+
+/* Navigation buttons */
+.about-header .page-nav a,
+.about-header .page-nav a:visited {
+background-color: #321454;
+color: #ffffff !important;
+border: 2px solid #ffffff;
+font-weight: 700;
+}
+
+/* Hover, keyboard focus, and current page */
+.about-header .page-nav a:hover,
+.about-header .page-nav a:focus-visible,
+.about-header .page-nav a[aria-current="page"] {
+background-color: #542a80;
+color: #ffffff !important;
+}
+
+/* Visible keyboard focus */
+.about-header a:focus-visible {
+outline: 3px solid #ffd76a;
+outline-offset: 3px;
+}
+
 
 
 

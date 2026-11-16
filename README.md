@@ -57,11 +57,11 @@ All three pages were tested using WAVE. Accessibility and color contrast errors 
 - [x] Run WAVE on all three pages
 - [x] Fix remaining accessibility errors
 - [x] Verify WCAG AA color contrast
-- [ ] Test keyboard navigation
-- [ ] Test contact form validation
-- [ ] Test mobile layouts
-- [ ] Check all website links
-- [ ] Commit final changes
+- [x] Test keyboard navigation
+- [x] Test contact form validation
+- [x] Test mobile layouts
+- [x] Check all website links
+- [x] Commit final changes
 
 ## Website
 https://ethompson3-cmd.github.io/NOVAHUESITE-APP/

@@ -583,6 +583,112 @@ right: 0;
 max-width: calc(100vw - 32px);
 }
 }
+/* NOVAHUE ORIGINAL-STYLE GRADIENT */
+
+body {
+background: #170e43;
+color: #ffffff;
+}
+
+main {
+max-width: 1200px;
+min-height: 75vh;
+margin: 24px auto;
+padding: 60px 42px;
+border: 2px solid #a78bd8;
+border-radius: 8px;
+
+background:
+radial-gradient(
+ellipse at 42% 22%,
+rgba(255, 78, 235, 0.85),
+transparent 45%
+),
+radial-gradient(
+ellipse at 95% 55%,
+rgba(65, 220, 255, 0.85),
+transparent 50%
+),
+radial-gradient(
+ellipse at 12% 85%,
+rgba(30, 75, 230, 0.85),
+transparent 55%
+),
+linear-gradient(
+135deg,
+#20104f,
+#6436ba 55%,
+#25105d
+);
+}
+
+main h1,
+main .eyebrow,
+main .intro {
+color: #ffffff;
+}
+
+header {
+background: #211433;
+border: 2px solid #e0bc66;
+max-width: 1200px;
+margin: 20px auto;
+padding: 20px;
+border-radius: 6px;
+}
+
+header .brand,
+header .tagline button {
+color: #ffffff;
+}
+/* NOVAHUE RIGHT-SIDE MENU FIX */
+
+/* Move all three menus to the right */
+.modes-container {
+display: flex !important;
+justify-content: flex-end !important;
+align-items: center;
+flex-wrap: wrap;
+gap: 12px;
+width: 100%;
+margin-left: auto;
+}
+
+/* Anchor dropdowns to their buttons */
+.mode-item {
+position: relative;
+}
+
+/* Open dropdowns toward the left */
+.mode-item .dropdown {
+position: absolute;
+top: calc(100% + 6px);
+left: auto !important;
+right: 0 !important;
+width: 280px;
+max-width: calc(100vw - 32px);
+z-index: 9999;
+}
+
+/* Prevent menu text from being cut off */
+.mode-item .dropdown button {
+white-space: normal;
+overflow-wrap: anywhere;
+text-align: left;
+}
+
+/* On narrow screens, keep menus usable */
+@media (max-width: 768px) {
+.modes-container {
+justify-content: flex-end !important;
+}
+
+.mode-item .dropdown {
+width: min(280px, calc(100vw - 32px));
+}
+}
+
+
 
 
 

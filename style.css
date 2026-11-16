@@ -687,6 +687,35 @@ justify-content: flex-end !important;
 width: min(280px, calc(100vw - 32px));
 }
 }
+/* NOVAHUE NAVIGATION ACCESSIBILITY FIX */
+
+/* Make all navigation links visible */
+.page-nav a {
+color: #ffffff !important;
+font-weight: 700;
+text-decoration: none;
+}
+
+/* Keep the active page highlighted */
+.page-nav a[aria-current="page"] {
+background-color: #60358b;
+color: #ffffff !important;
+}
+
+/* Make links visible when hovering */
+.page-nav a:hover,
+.page-nav a:focus-visible {
+background-color: #60358b;
+color: #ffffff !important;
+text-decoration: underline;
+}
+
+/* Visible keyboard focus */
+.page-nav a:focus-visible {
+outline: 3px solid #ffd76a;
+outline-offset: 3px;
+}
+
 
 
 

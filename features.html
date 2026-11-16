@@ -3,58 +3,260 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Features | NovaHue</title>
+<meta name="description" content="Explore Nova Hue's salon management, education, booking, and color formulation tools.">
+<title>Features | Nova Hue</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+.features-main {
+max-width: 1120px;
+margin: 0 auto;
+padding: 48px 24px 80px;
+}
+
+.features-intro {
+max-width: 750px;
+line-height: 1.7;
+}
+
+.feature-grid {
+display: grid;
+grid-template-columns: repeat(
+auto-fit,
+minmax(min(100%, 260px), 1fr)
+);
+gap: 22px;
+margin-top: 32px;
+}
+
+.feature-card {
+padding: 26px;
+background: #ffffff;
+color: #20211d;
+border: 2px solid #d2c0df;
+border-radius: 14px;
+box-shadow: 0 5px 15px rgba(40, 20, 60, 0.08);
+}
+
+.feature-card h2 {
+font-size: 1.5rem;
+margin-top: 0;
+}
+
+.feature-card p {
+line-height: 1.7;
+}
+
+.feature-card a {
+display: inline-block;
+margin-top: 8px;
+font-weight: 700;
+color: #321454;
+}
+
+.feature-card a:hover {
+text-decoration: underline;
+}
+
+.feature-note {
+margin-top: 36px;
+padding: 20px;
+border-left: 5px solid #60358b;
+background: #ffffff;
+color: #20211d;
+border-radius: 8px;
+}
+
+footer {
+padding: 28px;
+text-align: center;
+background: #321454;
+color: #ffffff;
+}
+
+footer a {
+color: #ffffff;
+}
+</style>
 </head>
+
 <body>
-<header class="site-header">
-<div class="brand">Nova Hue</div>
-<nav class="page-nav">
+
+<a class="skip-link" href="#main-content">
+Skip to main content
+</a>
+
+<header>
+<a class="brand" href="index.html">
+Nova Hue
+</a>
+
+<nav class="page-nav" aria-label="Site pages">
 <a href="index.html">Home</a>
-<a href="features.html">Features</a>
-<a href="about.html">About</a>
+<a href="features.html" aria-current="page">
+Features
+</a>
+<a href="contact.html">About / Contact</a>
 </nav>
 </header>
 
-<main class="features-page">
-<h1>Explore NovaHue</h1>
-<p>Capture Your Prism. Learn, grow, and create.</p>
+<main id="main-content" class="features-main">
 
-<section class="features-grid">
+<p class="eyebrow">
+Learn · Grow · Create
+</p>
+
+<h1>Explore Nova Hue Features</h1>
+
+<p class="features-intro">
+Nova Hue brings salon management,
+professional education, and creative
+tools together in one convenient space.
+Discover the features designed to help
+cosmetologists work smarter, stay
+organized, and grow their businesses.
+</p>
+
+<section aria-labelledby="tools-heading">
+
+<h2 id="tools-heading">
+Tools for Every Stylist
+</h2>
+
+<div class="feature-grid">
+
 <article class="feature-card">
-<h2>📅 Booking & Scheduling</h2>
-<p>Manage appointments, organize schedules, and keep clients connected.</p>
+<h2>Appointment Booking</h2>
+<p>
+Organize appointments, track
+upcoming services, and simplify
+the scheduling process.
+</p>
+<a href="index.html">
+Explore Booking
+</a>
 </article>
 
 <article class="feature-card">
-<h2>🧪 Hair Color Calculator</h2>
-<p>Explore color formulas and simplify your creative process.</p>
+<h2>Hair Color Formula Calculator</h2>
+<p>
+Calculate color and developer
+mixing ratios to support accurate
+product preparation.
+</p>
+<a href="index.html">
+Explore Formula Tools
+</a>
 </article>
 
 <article class="feature-card">
-<h2>🔍 Ingredient Scanner</h2>
-<p>Learn more about the ingredients in professional hair products.</p>
+<h2>Ingredient Scanner</h2>
+<p>
+Search ingredient information
+and learn more about products
+used in professional hair care.
+</p>
+<a href="index.html">
+Explore Ingredients
+</a>
 </article>
 
 <article class="feature-card">
-<h2>👥 Client Management</h2>
-<p>Keep consultation notes, preferences, and service histories organized.</p>
+<h2>Client Records</h2>
+<p>
+Organize service information,
+consultation notes, and
+appointment history.
+</p>
+<a href="index.html">
+Explore Client Tools
+</a>
 </article>
 
 <article class="feature-card">
-<h2>📦 Inventory Tracking</h2>
-<p>Organize salon supplies and plan future product purchases.</p>
+<h2>Inventory Management</h2>
+<p>
+Track product quantities,
+monitor supplies, and support
+salon inventory planning.
+</p>
+<a href="index.html">
+Explore Inventory
+</a>
 </article>
 
 <article class="feature-card">
-<h2>📚 Stylist Education</h2>
-<p>Discover techniques, educational resources, and opportunities to grow.</p>
+<h2>Financial Tools</h2>
+<p>
+Use the cash counter, expense
+tracker, and reporting tools
+to organize salon finances.
+</p>
+<a href="index.html">
+Explore Financial Tools
+</a>
 </article>
+
+<article class="feature-card">
+<h2>Stylist Education</h2>
+<p>
+Explore professional topics,
+hair color education, and
+resources for continuing growth.
+</p>
+<a href="index.html">
+Explore Education
+</a>
+</article>
+
+<article class="feature-card">
+<h2>Prism Photo Gallery</h2>
+<p>
+Preview hairstyle inspiration
+photos and celebrate your
+creative work.
+</p>
+<a href="index.html">
+Explore Photo Gallery
+</a>
+</article>
+
+<article class="feature-card">
+<h2>Manager Dashboard</h2>
+<p>
+Organize employee schedules,
+inventory, reports, and
+salon management tasks.
+</p>
+<a href="index.html">
+Explore Manager Tools
+</a>
+</article>
+
+</div>
 </section>
+
+<aside class="feature-note">
+<h2>Growing With Nova Hue</h2>
+<p>
+Nova Hue is an evolving web development
+project. Some features currently operate
+as browser-based demonstrations while
+additional functionality is being developed.
+</p>
+</aside>
+
 </main>
 
 <footer>
-<p>NovaHue | Capture Your Prism</p>
+<p>Nova Hue — Capture Your Prism</p>
+<p>
+<a href="contact.html">
+Contact Nova Hue
+</a>
+</p>
 </footer>
+
 </body>
 </html>
+

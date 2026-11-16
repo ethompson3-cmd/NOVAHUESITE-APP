@@ -2,119 +2,247 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Learn about Nova Hue and contact our team.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Learn about Nova Hue and contact the Nova Hue team.">
 <title>About / Contact | Nova Hue</title>
 <link rel="stylesheet" href="style.css">
 
 <style>
-.about-main {
-max-width: 1000px;
+/* Accessible styles for the About page */
+.skip-link {
+position: absolute;
+left: 12px;
+top: -100px;
+padding: 12px 16px;
+background: #fff;
+color: #32135d;
+z-index: 1000;
+}
+
+.skip-link:focus {
+top: 12px;
+}
+
+.about-page {
+max-width: 1050px;
 margin: 0 auto;
 padding: 48px 24px 80px;
 }
 
-.about-section,
-.contact-section {
-background: #ffffff;
-color: #20211d;
-padding: 30px;
-margin-bottom: 28px;
-border: 2px solid #d2c0df;
-border-radius: 14px;
+.about-page h1,
+.about-page h2 {
+color: #28123f;
 }
 
-.about-section p,
-.contact-section p {
+.about-page p {
 line-height: 1.7;
 }
 
-.contact-form {
-max-width: 700px;
+.about-hero,
+.about-section,
+.contact-section {
+background: #fff;
+color: #25202c;
+border: 2px solid #d5b8ec;
+border-radius: 20px;
+padding: clamp(20px, 4vw, 40px);
+margin-bottom: 24px;
+box-shadow: 0 12px 35px rgba(54, 21, 92, .1);
 }
 
-.contact-form label {
-display: block;
-margin: 18px 0 6px;
-color: #321454;
+.about-hero {
+background: linear-gradient(
+125deg,
+#f7efff 0%,
+#e8d4ff 52%,
+#f8f3ff 100%
+);
+}
+
+.about-hero .eyebrow {
 font-weight: 700;
+letter-spacing: .07em;
+text-transform: uppercase;
+color: #4c246e;
+}
+
+.about-hero h1 {
+font-size: clamp(2rem, 5vw, 3.4rem);
+margin: .25em 0;
+}
+
+.about-grid {
+display: grid;
+grid-template-columns: repeat(
+auto-fit,
+minmax(min(100%, 240px), 1fr)
+);
+gap: 20px;
+margin-top: 24px;
+}
+
+.about-card {
+background: #f4e9ff;
+border: 1px solid #c9a4e4;
+border-radius: 14px;
+padding: 22px;
+}
+
+.about-card h3 {
+color: #32135d;
+margin-top: 0;
+}
+
+.contact-form {
+max-width: 720px;
+}
+
+.contact-form label,
+.contact-form legend {
+display: block;
+font-weight: 700;
+color: #28123f;
+margin-bottom: 7px;
 }
 
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
-display: block;
 width: 100%;
-padding: 12px;
-border: 2px solid #65526d;
-border-radius: 8px;
-background: #ffffff;
-color: #20211d;
 font: inherit;
+color: #21182a;
+background: #fff;
+border: 2px solid #6b4885;
+border-radius: 9px;
+padding: 12px;
+margin: 0;
 }
 
 .contact-form textarea {
-min-height: 130px;
 resize: vertical;
+min-height: 140px;
+}
+
+.form-field {
+margin: 0 0 22px;
 }
 
 .contact-form fieldset {
-margin-top: 20px;
-padding: 16px;
-border: 2px solid #65526d;
-border-radius: 8px;
+border: 2px solid #c9a4e4;
+border-radius: 12px;
+padding: 18px;
+margin: 0 0 22px;
+min-width: 0;
 }
 
-.contact-form legend {
-padding: 0 8px;
-font-weight: 700;
-color: #321454;
+.contact-form fieldset .form-field {
+margin-bottom: 0;
 }
 
-.contact-form .error {
-color: #a00020;
+.required-note {
+margin-bottom: 20px;
+}
+
+.error {
+color: #a01931;
 font-weight: 700;
-margin: 5px 0 10px;
+margin: 6px 0 0;
+min-height: 1.4em;
 }
 
 .contact-form [aria-invalid="true"] {
-border: 3px solid #a00020;
+border-color: #a01931;
+background: #fff6f7;
 }
 
 .submit-button {
-background: #321454;
-color: #ffffff;
-border: 2px solid #321454;
-border-radius: 10px;
-padding: 13px 24px;
-margin-top: 20px;
+background: #512078;
+color: #fff;
+border: 2px solid #512078;
+border-radius: 999px;
+padding: 13px 28px;
+font: inherit;
 font-weight: 700;
 cursor: pointer;
 }
 
 .submit-button:hover {
-background: #60358b;
+background: #381054;
 }
 
-#form-status {
+.form-status {
 margin-top: 18px;
 font-weight: 700;
+color: #28123f;
 }
 
-footer {
-background: #321454;
-color: #ffffff;
-padding: 28px;
-text-align: center;
+.page-nav {
+display: flex;
+flex-wrap: wrap;
+gap: 12px;
+align-items: center;
 }
 
-footer a {
-color: #ffffff;
+.page-nav a {
+color: #28123f;
+background: #f3e7ff;
+padding: 8px 12px;
+border-radius: 8px;
+text-decoration: underline;
+text-underline-offset: 3px;
+}
+
+.page-nav a[aria-current="page"] {
+font-weight: 800;
+background: #e1c3fa;
+}
+
+.about-header {
+max-width: 1120px;
+margin: auto;
+padding: 24px;
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+align-items: center;
+justify-content: space-between;
+}
+
+.about-header .brand {
+font-size: 1.5rem;
+font-weight: 800;
+color: #28123f;
+text-decoration: none;
+}
+
+.about-footer {
+max-width: 1050px;
+margin: 0 auto;
+padding: 12px 24px 40px;
+color: #28123f;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+outline: 3px solid #b44900;
+outline-offset: 3px;
 }
 
 @media (max-width: 600px) {
+.about-header {
+align-items: flex-start;
+}
+
+.about-page {
+padding-top: 20px;
+}
+
 .about-section,
-.contact-section {
+.contact-section,
+.about-hero {
 padding: 20px;
 }
 }
@@ -122,12 +250,11 @@ padding: 20px;
 </head>
 
 <body>
-
 <a class="skip-link" href="#main-content">
 Skip to main content
 </a>
 
-<header>
+<header class="about-header">
 <a class="brand" href="index.html">
 Nova Hue
 </a>
@@ -141,40 +268,64 @@ About / Contact
 </nav>
 </header>
 
-<main id="main-content" class="about-main">
+<main id="main-content" class="about-page">
 
-<p class="eyebrow">
-Learn · Grow · Create
+<section class="about-hero" aria-labelledby="about-heading">
+<p class="eyebrow">Learn · Grow · Create</p>
+<h1 id="about-heading">About Nova Hue</h1>
+<p>
+Capture Your Prism. Nova Hue is a salon-management
+and learning concept designed to help beauty
+professionals organize their work, connect with
+clients, and grow their skills.
 </p>
+</section>
 
-<h1>About Nova Hue</h1>
-
-<section class="about-section" aria-labelledby="about-heading">
-<h2 id="about-heading">Our Mission</h2>
+<section class="about-section" aria-labelledby="mission-heading">
+<h2 id="mission-heading">Our Mission</h2>
 
 <p>
-Nova Hue was created to help cosmetologists
-and salon professionals simplify their daily
-responsibilities while continuing to grow
-creatively and professionally.
+We want to make the day-to-day work of cosmetologists
+and salon teams simpler by bringing useful tools
+together in one welcoming space.
 </p>
 
+<div class="about-grid">
+
+<div class="about-card">
+<h3>For Clients</h3>
 <p>
-From appointment booking and client management
-to hair color formulation, inventory, education,
-and financial organization, Nova Hue brings
-essential tools together in one place.
+Explore appointment booking, hairstyle inspiration,
+and a more connected salon experience.
 </p>
+</div>
+
+<div class="about-card">
+<h3>For Stylists</h3>
+<p>
+Explore tools for color formulas, client records,
+product information, education, and inventory.
+</p>
+</div>
+
+<div class="about-card">
+<h3>For Managers</h3>
+<p>
+Explore scheduling, reports, inventory,
+and business-management features.
+</p>
+</div>
+
+</div>
 
 <p>
-Our goal is to make professional resources
-more accessible and convenient for stylists
-at every stage of their careers.
+Nova Hue is a developing student project.
+Some features are demonstrations rather than
+live salon services.
 </p>
 </section>
 
 <section class="contact-section" aria-labelledby="contact-heading">
-
 <h2 id="contact-heading">Contact Nova Hue</h2>
 
 <p>
@@ -182,12 +333,15 @@ Have a question, suggestion, or idea?
 Fill out the form below.
 </p>
 
-<p>Fields marked with * are required.</p>
+<p class="required-note">
+Fields marked with * are required.
+</p>
 
 <form id="contact-form" class="contact-form" novalidate>
 
-<div>
+<div class="form-field">
 <label for="full-name">Full Name *</label>
+
 <input
 type="text"
 id="full-name"
@@ -196,11 +350,13 @@ autocomplete="name"
 required
 aria-describedby="name-error"
 >
+
 <p class="error" id="name-error"></p>
 </div>
 
-<div>
+<div class="form-field">
 <label for="email">Email Address *</label>
+
 <input
 type="email"
 id="email"
@@ -209,12 +365,14 @@ autocomplete="email"
 required
 aria-describedby="email-error"
 >
+
 <p class="error" id="email-error"></p>
 </div>
 
 <fieldset>
 <legend>Reason for Contact *</legend>
 
+<div class="form-field">
 <label for="contact-reason">
 Select a Reason
 </label>
@@ -234,9 +392,10 @@ aria-describedby="reason-error"
 </select>
 
 <p class="error" id="reason-error"></p>
+</div>
 </fieldset>
 
-<div>
+<div class="form-field">
 <label for="message">Your Message *</label>
 
 <textarea
@@ -254,17 +413,20 @@ aria-describedby="message-error"
 Send Message
 </button>
 
-<p id="form-status" role="status" aria-live="polite"></p>
+<p
+id="form-status"
+class="form-status"
+role="status"
+aria-live="polite"
+></p>
 
 </form>
 </section>
+
 </main>
 
-<footer>
-<p>Nova Hue — Capture Your Prism</p>
-<p>
-<a href="index.html">Return to Home</a>
-</p>
+<footer class="about-footer">
+<p>© Nova Hue · Capture Your Prism</p>
 </footer>
 
 <script>
@@ -273,10 +435,10 @@ Send Message
 const contactForm = document.getElementById('contact-form');
 
 const formFields = [
-{ input: 'full-name', error: 'name-error' },
-{ input: 'email', error: 'email-error' },
-{ input: 'contact-reason', error: 'reason-error' },
-{ input: 'message', error: 'message-error' }
+{input: 'full-name', error: 'name-error'},
+{input: 'email', error: 'email-error'},
+{input: 'contact-reason', error: 'reason-error'},
+{input: 'message', error: 'message-error'}
 ];
 
 function validateField(field) {
@@ -288,22 +450,20 @@ let errorMessage = '';
 if (!input.value.trim()) {
 errorMessage = 'This field is required.';
 } else if (!input.validity.valid) {
-if (input.validity.typeMismatch) {
-errorMessage = 'Please enter a valid email address.';
-} else {
-errorMessage = 'Please check this field.';
-}
+errorMessage = input.validity.typeMismatch
+? 'Please enter a valid email address.'
+: 'Please check this field.';
 }
 
 error.textContent = errorMessage;
 
 if (errorMessage) {
 input.setAttribute('aria-invalid', 'true');
-return false;
+} else {
+input.removeAttribute('aria-invalid');
 }
 
-input.removeAttribute('aria-invalid');
-return true;
+return !errorMessage;
 }
 
 formFields.forEach(field => {
@@ -331,13 +491,12 @@ let formIsValid = true;
 let firstInvalidField = null;
 
 formFields.forEach(field => {
-const valid = validateField(field);
-
-if (!valid) {
+if (!validateField(field)) {
 formIsValid = false;
 
 if (!firstInvalidField) {
-firstInvalidField = document.getElementById(field.input);
+firstInvalidField =
+document.getElementById(field.input);
 }
 }
 });
@@ -348,10 +507,7 @@ if (!formIsValid) {
 status.textContent =
 'Please correct the highlighted fields before submitting.';
 
-if (firstInvalidField) {
 firstInvalidField.focus();
-}
-
 return;
 }
 
@@ -372,3 +528,4 @@ document.getElementById(field.error)
 
 </body>
 </html>
+

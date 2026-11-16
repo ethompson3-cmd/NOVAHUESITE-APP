@@ -3,58 +3,373 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About NovaHue | Capture Your Prism</title>
+<meta name="description" content="Learn about Nova Hue and contact our team.">
+<title>About / Contact | Nova Hue</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+.about-main {
+max-width: 1000px;
+margin: 0 auto;
+padding: 48px 24px 80px;
+}
+
+.about-section,
+.contact-section {
+background: #ffffff;
+color: #20211d;
+padding: 30px;
+margin-bottom: 28px;
+border: 2px solid #d2c0df;
+border-radius: 14px;
+}
+
+.about-section p,
+.contact-section p {
+line-height: 1.7;
+}
+
+.contact-form {
+max-width: 700px;
+}
+
+.contact-form label {
+display: block;
+margin: 18px 0 6px;
+color: #321454;
+font-weight: 700;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+display: block;
+width: 100%;
+padding: 12px;
+border: 2px solid #65526d;
+border-radius: 8px;
+background: #ffffff;
+color: #20211d;
+font: inherit;
+}
+
+.contact-form textarea {
+min-height: 130px;
+resize: vertical;
+}
+
+.contact-form fieldset {
+margin-top: 20px;
+padding: 16px;
+border: 2px solid #65526d;
+border-radius: 8px;
+}
+
+.contact-form legend {
+padding: 0 8px;
+font-weight: 700;
+color: #321454;
+}
+
+.contact-form .error {
+color: #a00020;
+font-weight: 700;
+margin: 5px 0 10px;
+}
+
+.contact-form [aria-invalid="true"] {
+border: 3px solid #a00020;
+}
+
+.submit-button {
+background: #321454;
+color: #ffffff;
+border: 2px solid #321454;
+border-radius: 10px;
+padding: 13px 24px;
+margin-top: 20px;
+font-weight: 700;
+cursor: pointer;
+}
+
+.submit-button:hover {
+background: #60358b;
+}
+
+#form-status {
+margin-top: 18px;
+font-weight: 700;
+}
+
+footer {
+background: #321454;
+color: #ffffff;
+padding: 28px;
+text-align: center;
+}
+
+footer a {
+color: #ffffff;
+}
+
+@media (max-width: 600px) {
+.about-section,
+.contact-section {
+padding: 20px;
+}
+}
+</style>
 </head>
+
 <body>
-<header class="site-header">
-<a class="brand" href="index.html">Nova Hue</a>
+
+<a class="skip-link" href="#main-content">
+Skip to main content
+</a>
+
+<header>
+<a class="brand" href="index.html">
+Nova Hue
+</a>
 
 <nav class="page-nav" aria-label="Site pages">
 <a href="index.html">Home</a>
 <a href="features.html">Features</a>
-<a href="about.html" aria-current="page">About / Contact</a>
+<a href="contact.html" aria-current="page">
+About / Contact
+</a>
 </nav>
 </header>
 
-<main class="features-page">
-<h1>About NovaHue</h1>
-<p class="intro">
-Capture Your Prism. Learn, Grow, Create.
+<main id="main-content" class="about-main">
+
+<p class="eyebrow">
+Learn · Grow · Create
 </p>
 
-<section class="features-grid">
-<article class="feature-card">
-<h2>Our Mission</h2>
-<p>
-NovaHue is designed to bring cosmetology
-education, creativity, and salon management
-together in one convenient space.
-</p>
-</article>
+<h1>About Nova Hue</h1>
 
-<article class="feature-card">
-<h2>What We Offer</h2>
-<p>
-Our vision includes appointment scheduling,
-client management, professional hair color
-tools, inventory tracking, and stylist education.
-</p>
-</article>
+<section class="about-section" aria-labelledby="about-heading">
+<h2 id="about-heading">Our Mission</h2>
 
-<article class="feature-card">
-<h2>Contact NovaHue</h2>
 <p>
-Have questions or suggestions?
-Contact information will be available here
-as NovaHue continues to develop.
+Nova Hue was created to help cosmetologists
+and salon professionals simplify their daily
+responsibilities while continuing to grow
+creatively and professionally.
 </p>
-</article>
+
+<p>
+From appointment booking and client management
+to hair color formulation, inventory, education,
+and financial organization, Nova Hue brings
+essential tools together in one place.
+</p>
+
+<p>
+Our goal is to make professional resources
+more accessible and convenient for stylists
+at every stage of their careers.
+</p>
+</section>
+
+<section class="contact-section" aria-labelledby="contact-heading">
+
+<h2 id="contact-heading">Contact Nova Hue</h2>
+
+<p>
+Have a question, suggestion, or idea?
+Fill out the form below.
+</p>
+
+<p>Fields marked with * are required.</p>
+
+<form id="contact-form" class="contact-form" novalidate>
+
+<div>
+<label for="full-name">Full Name *</label>
+<input
+type="text"
+id="full-name"
+name="full-name"
+autocomplete="name"
+required
+aria-describedby="name-error"
+>
+<p class="error" id="name-error"></p>
+</div>
+
+<div>
+<label for="email">Email Address *</label>
+<input
+type="email"
+id="email"
+name="email"
+autocomplete="email"
+required
+aria-describedby="email-error"
+>
+<p class="error" id="email-error"></p>
+</div>
+
+<fieldset>
+<legend>Reason for Contact *</legend>
+
+<label for="contact-reason">
+Select a Reason
+</label>
+
+<select
+id="contact-reason"
+name="contact-reason"
+required
+aria-describedby="reason-error"
+>
+<option value="">Choose a reason</option>
+<option value="booking">Appointment Booking</option>
+<option value="features">Nova Hue Features</option>
+<option value="education">Stylist Education</option>
+<option value="feedback">Feedback or Suggestions</option>
+<option value="other">Other</option>
+</select>
+
+<p class="error" id="reason-error"></p>
+</fieldset>
+
+<div>
+<label for="message">Your Message *</label>
+
+<textarea
+id="message"
+name="message"
+rows="6"
+required
+aria-describedby="message-error"
+></textarea>
+
+<p class="error" id="message-error"></p>
+</div>
+
+<button class="submit-button" type="submit">
+Send Message
+</button>
+
+<p id="form-status" role="status" aria-live="polite"></p>
+
+</form>
 </section>
 </main>
 
 <footer>
-<p>NovaHue | Capture Your Prism</p>
+<p>Nova Hue — Capture Your Prism</p>
+<p>
+<a href="index.html">Return to Home</a>
+</p>
 </footer>
+
+<script>
+'use strict';
+
+const contactForm = document.getElementById('contact-form');
+
+const formFields = [
+{ input: 'full-name', error: 'name-error' },
+{ input: 'email', error: 'email-error' },
+{ input: 'contact-reason', error: 'reason-error' },
+{ input: 'message', error: 'message-error' }
+];
+
+function validateField(field) {
+const input = document.getElementById(field.input);
+const error = document.getElementById(field.error);
+
+let errorMessage = '';
+
+if (!input.value.trim()) {
+errorMessage = 'This field is required.';
+} else if (!input.validity.valid) {
+if (input.validity.typeMismatch) {
+errorMessage = 'Please enter a valid email address.';
+} else {
+errorMessage = 'Please check this field.';
+}
+}
+
+error.textContent = errorMessage;
+
+if (errorMessage) {
+input.setAttribute('aria-invalid', 'true');
+return false;
+}
+
+input.removeAttribute('aria-invalid');
+return true;
+}
+
+formFields.forEach(field => {
+const input = document.getElementById(field.input);
+
+input.addEventListener('blur', () => {
+validateField(field);
+});
+
+input.addEventListener('input', () => {
+if (input.hasAttribute('aria-invalid')) {
+validateField(field);
+}
+});
+
+input.addEventListener('change', () => {
+validateField(field);
+});
+});
+
+contactForm.addEventListener('submit', event => {
+event.preventDefault();
+
+let formIsValid = true;
+let firstInvalidField = null;
+
+formFields.forEach(field => {
+const valid = validateField(field);
+
+if (!valid) {
+formIsValid = false;
+
+if (!firstInvalidField) {
+firstInvalidField = document.getElementById(field.input);
+}
+}
+});
+
+const status = document.getElementById('form-status');
+
+if (!formIsValid) {
+status.textContent =
+'Please correct the highlighted fields before submitting.';
+
+if (firstInvalidField) {
+firstInvalidField.focus();
+}
+
+return;
+}
+
+status.textContent =
+'Your form passed validation. This is a demonstration form, so no message was sent.';
+
+contactForm.reset();
+
+formFields.forEach(field => {
+document.getElementById(field.input)
+.removeAttribute('aria-invalid');
+
+document.getElementById(field.error)
+.textContent = '';
+});
+});
+</script>
+
 </body>
 </html>
+

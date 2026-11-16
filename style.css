@@ -821,6 +821,61 @@ button:focus-visible {
 outline: 3px solid #ffd76a;
 outline-offset: 3px;
 }
+/* NOVAHUE — ACCESSIBLE PURPLE BUTTONS */
+
+/* Main buttons */
+button,
+.button,
+.primary,
+.secondary,
+.submit-button,
+.photo-picker,
+.status-button {
+background-color: #321454;
+color: #ffffff;
+border: 2px solid #321454;
+}
+
+/* Navigation links styled as buttons */
+header .page-nav a,
+header .page-nav a:visited {
+background-color: #321454;
+color: #ffffff !important;
+border-radius: 8px;
+}
+
+/* Dropdown menu buttons */
+.mode-toggle,
+.dropdown button {
+background-color: #321454;
+color: #ffffff;
+border: 2px solid #321454;
+}
+
+/* Hover and active states */
+button:hover,
+.button:hover,
+.primary:hover,
+.secondary:hover,
+.submit-button:hover,
+.photo-picker:hover,
+.status-button:hover,
+header .page-nav a:hover,
+header .page-nav a[aria-current="page"],
+.mode-toggle:hover,
+.dropdown button:hover {
+background-color: #542a80;
+color: #ffffff !important;
+}
+
+/* Keyboard accessibility */
+button:focus-visible,
+a:focus-visible,
+.photo-picker:focus-visible {
+outline: 3px solid #ffd76a;
+outline-offset: 3px;
+}
+
 
 
 

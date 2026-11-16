@@ -524,4 +524,17 @@ animation-duration: .01ms !important;
 transition-duration: .01ms !important;
 }
 }
+/* Restore NovaHue purple background */
+
+body {
+background: linear-gradient(
+135deg,
+#f5f0fa 0%,
+#e8d4f5 35%,
+#c59be5 65%,
+#9b5fc0 100%
+);
+background-attachment: fixed;
+}
+
 

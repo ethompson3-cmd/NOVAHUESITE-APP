@@ -47,9 +47,11 @@ This is a demonstration form and does not send real messages.
 
 | Page | Errors | Contrast Errors | Status |
 |---|---|---|---|
-| Home | Pending | Pending | Not yet verified |
-| Features | Pending | Pending | Not yet verified |
-| About / Contact | Pending | Pending | Needs retesting |
+| Home (index.html) | 0 | 0 | Passed |
+| Features (features.html) | 0 | 0 | Passed |
+| About / Contact (about.html) | 0 | 0 | Passed |
+
+All three pages were tested using WAVE. Accessibility and color contrast errors were corrected, resulting in zero reported errors and zero contrast errors on each page.
 
 ### Final Testing Checklist
 - [ ] Run WAVE on all three pages

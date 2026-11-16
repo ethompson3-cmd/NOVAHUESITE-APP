@@ -1,506 +1,498 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nova Hue | Capture Your Prism</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova Hue | Capture Your Prism</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="accessibility.css">
 </head>
 <body>
-  <header>
-    <button class="status-button" id="store-status-btn" type="button">
-      🟢 <span id="status-text">OPEN</span>
-    </button>
-    <button class="cash-button" id="cash-counter-btn" type="button">
-      💵 Cash Counter
-    </button>
-    <a class="brand" href="index.html">Nova Hue</a>
-    <div class="tagline">
-      <button id="open-gallery" type="button">Capture Your Prism</button>
-    </div>
-    <nav class="page-nav" aria-label="Site pages">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="features.html">Features</a>
-      <a href="about.html">About / Contact </a>
-    </nav>
-    <nav class="modes-container" aria-label="Feature menus">
-      <div class="mode-item">
-        <button class="mode-toggle" type="button" aria-expanded="false" aria-controls="client-dropdown">Client ▾</button>
-        <div class="dropdown" id="client-dropdown">
-          <button data-feature="booking">📅 Book an Appointment</button>
-          <button data-feature="client">📝 Client Information</button>
-          <button data-feature="gallery">📷 Photo Gallery</button>
-        </div>
-      </div>
-      <div class="mode-item">
-        <button class="mode-toggle" type="button" aria-expanded="false" aria-controls="stylist-dropdown">Stylist ▾</button>
-        <div class="dropdown" id="stylist-dropdown">
-          <button data-feature="booking">🗓️ Appointment Booking & Scheduling</button>
-          <button data-feature="calculator">🧪 Hair Color Formula Calculator</button>
-          <button data-feature="scanner">🔍 Ingredient Scanner</button>
-          <button data-feature="records">👥 Client Records & Management</button>
-          <button data-feature="inventory">📦 Inventory Tracking</button>
-          <button data-feature="education">📚 Stylist Education</button>
-          <button data-feature="feed">🌈 Prism Feed</button>
-        </div>
-      </div>
-      <div class="mode-item">
-        <button class="mode-toggle" type="button" aria-expanded="false" aria-controls="manager-dropdown">Manager ▾</button>
-        <div class="dropdown" id="manager-dropdown">
-          <button data-feature="schedule">🗓️ Employee Scheduling</button>
-          <button data-feature="employees">👤 Employee Information</button>
-          <button data-feature="inventory">📦 Inventory</button>
-          <button data-feature="taxes">📄 Tax Information</button>
-          <button data-feature="reports">📊 Reports</button>
-          <button data-feature="calculator">🧪 Hair Color Formula Calculator</button>
-          <button data-feature="scanner">🔍 Ingredient Scanner</button>
-          <button data-feature="records">👥 Client Records & Management</button>
-          <button data-feature="education">📚 Stylist Education</button>
-        </div>
-      </div>
-    </nav>
-  </header>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <main>
-    <p class="eyebrow">Learn · Grow · Create</p>
-    <h1>Welcome to Nova Hue.</h1>
-    <p class="intro">
-      A versatile space for cosmetologists to learn new skills,
-      grow their business, and book more clients.
-    </p>
-    <button class="button" id="get-started" type="button">Get started</button>
-    <button class="button" id"login-button" type="button"> Log In</button>
-    
-  </main>
+<header>
+<button class="status-button" id="store-status-btn" type="button">🟢 <span id="status-text">OPEN</span></button>
 
-  <div class="panel-backdrop" id="backdrop" hidden>
-    <section class="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title" tabindex="-1">
-      <button class="close" id="close-panel" aria-label="Close dialog">✕</button>
-      <h2 id="panel-title"></h2>
-      <div id="panel-body"></div>
-    </section>
-  </div>
+<a class="brand" href="index.html">Nova Hue</a>
+<div class="tagline">
+<button id="open-gallery" type="button">Capture Your Prism</button>
+</div>
 
-  <script>
-    'use strict';
+<nav class="page-nav" aria-label="Site pages">
+<a href="index.html" aria-current="page">Home</a>
+<a href="features.html">Features</a>
+<a href="contact.html">About / Contact</a>
+</nav>
 
-    // Local browser demo only. Do not store real client health,
-    // payment, or private employee data here.
-    const $ = id => document.getElementById(id);
-    const backdrop = $('backdrop');
-    const body = $('panel-body');
+<nav class="modes-container" aria-label="Feature menus">
+<div class="mode-item">
+<button class="mode-toggle" type="button" aria-expanded="false" aria-controls="client-dropdown">Client ▾</button>
+<div class="dropdown" id="client-dropdown">
+<button data-feature="booking">📅 Book an Appointment</button>
+<button data-feature="client">📝 Client Information</button>
+<button data-feature="gallery">📷 Photo Gallery</button>
+</div>
+</div>
 
-    const keys = {
-      booking: 'novahue-demo-bookings',
-      inventory: 'novahue-demo-inventory',
-      employees: 'novahue-demo-employees',
-      schedule: 'novahue-demo-shifts',
-      feed: 'novahue-demo-posts',
-      gallery: 'novahue-demo-gallery',
-      records: 'novahue-demo-records',
-      expenses: 'novahue-demo-expenses'
-    };
+<div class="mode-item">
+<button class="mode-toggle" type="button" aria-expanded="false" aria-controls="stylist-dropdown">Stylist ▾</button>
+<div class="dropdown" id="stylist-dropdown">
+<button data-feature="booking">🗓️ Appointment Booking & Scheduling</button>
+<button data-feature="calculator">🧪 Hair Color Formula Calculator</button>
+<button data-feature="scanner">🔍 Ingredient Scanner</button>
+<button data-feature="records">👥 Client Records & Management</button>
+<button data-feature="inventory">📦 Inventory Tracking</button>
+<button data-feature="education">📚 Stylist Education</button>
+<button data-feature="feed">🌈 Prism Feed</button>
+<button data-feature="cash">💵 Cash Counter</button>
+</div>
+</div>
 
-    function load(k) {
-      try {
-        return JSON.parse(localStorage.getItem(keys[k])) || [];
-      } catch {
-        return [];
-      }
-    }
+<div class="mode-item">
+<button class="mode-toggle" type="button" aria-expanded="false" aria-controls="manager-dropdown">Manager ▾</button>
+<div class="dropdown" id="manager-dropdown">
+<button data-feature="schedule">🗓️ Employee Scheduling</button>
+<button data-feature="employees">👤 Employee Information</button>
+<button data-feature="inventory">📦 Inventory</button>
+<button data-feature="taxes">📄 Tax Information</button>
+<button data-feature="reports">📊 Reports</button>
+<button data-feature="cash">💵 Cash Counter</button>
+<button data-feature="calculator">🧪 Hair Color Formula Calculator</button>
+<button data-feature="scanner">🔍 Ingredient Scanner</button>
+<button data-feature="records">👥 Client Records & Management</button>
+<button data-feature="education">📚 Stylist Education</button>
+</div>
+</div>
+</nav>
+</header>
 
-    function save(k, v) {
-      try {
-        localStorage.setItem(keys[k], JSON.stringify(v));
-        return true;
-      } catch {
-        alert('Browser storage is full or unavailable. Your changes were not saved.');
-        return false;
-      }
-    }
+<main id="main-content">
+<p class="eyebrow">Learn · Grow · Create</p>
+<h1>Welcome to Nova Hue.</h1>
+<p class="intro">A versatile space for cosmetologists to learn new skills, grow their business, and book more clients.</p>
+<button class="button" id="get-started" type="button">Get started</button>
+</main>
 
-    function escapeHTML(s) {
-      return String(s ?? '').replace(/[&<>"']/g, c => ({
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#39;'
-      }[c]));
-    }
+<div class="panel-backdrop" id="backdrop" hidden>
+<section class="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title" tabindex="-1">
+<button class="close" id="close-panel" type="button" aria-label="Close dialog">✕</button>
+<h2 id="panel-title"></h2>
+<div id="panel-body"></div>
+</section>
+</div>
 
-    function closeMenus() {
-      document.querySelectorAll('.dropdown').forEach(m => m.classList.remove('open'));
-      document.querySelectorAll('.mode-toggle').forEach(b => b.setAttribute('aria-expanded', 'false'));
-    }
+<script>
+'use strict';
 
-    document.querySelectorAll('.mode-toggle').forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.stopPropagation();
-        let menu = $(btn.getAttribute('aria-controls'));
-        let open = menu.classList.contains('open');
-        closeMenus();
-        if (!open) {
-          menu.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-        }
-      });
-    });
+// Local browser demo only: do not store real client health,
+// payment, or private employee data here.
 
-    document.addEventListener('click', e => {
-      if (!e.target.closest('.mode-item')) closeMenus();
-    });
+const $ = id => document.getElementById(id);
+const backdrop = $('backdrop');
+const body = $('panel-body');
 
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
-        closeMenus();
-        closePanel();
-      }
-      if (e.key === 'Tab' && backdrop.classList.contains('open')) {
-        const items = [...backdrop.querySelectorAll('button,input,select,textarea,a[href],[tabindex]:not([tabindex="-1"])')]
-          .filter(x => !x.disabled && x.getClientRects().length);
-        if (items.length) {
-          let first = items[0], last = items[items.length - 1];
-          if (e.shiftKey && document.activeElement === first) {
-            e.preventDefault();
-            last.focus();
-          } else if (!e.shiftKey && document.activeElement === last) {
-            e.preventDefault();
-            first.focus();
-          }
-        }
-      }
-    });
+const keys = {
+booking: 'novahue-demo-bookings',
+inventory: 'novahue-demo-inventory',
+employees: 'novahue-demo-employees',
+schedule: 'novahue-demo-shifts',
+feed: 'novahue-demo-posts',
+gallery: 'novahue-demo-gallery',
+records: 'novahue-demo-records',
+expenses: 'novahue-demo-expenses'
+};
 
-    let returnFocus = null;
+function load(k) {
+try {
+return JSON.parse(localStorage.getItem(keys[k])) || [];
+} catch {
+return [];
+}
+}
 
-    function openPanel(title, markup, setup) {
-      returnFocus = document.activeElement;
-      closeMenus();
-      $('panel-title').textContent = title;
-      body.innerHTML = markup;
-      backdrop.hidden = false;
-      backdrop.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      if (setup) setup();
-      $('close-panel').focus();
-    }
+function save(k,v) {
+try {
+localStorage.setItem(keys[k],JSON.stringify(v));
+return true;
+} catch {
+console.error('Browser storage unavailable');
+return false;
+}
+}
 
-    function closePanel() {
-      if (!backdrop.classList.contains('open')) return;
-      backdrop.classList.remove('open');
-      backdrop.hidden = true;
-      document.body.style.overflow = '';
-      if (returnFocus && returnFocus.isConnected) returnFocus.focus();
-    }
+function escapeHTML(s) {
+return String(s ?? '').replace(/[&<>"']/g,c=>({
+'&':'&amp;',
+'<':'&lt;',
+'>':'&gt;',
+'"':'&quot;',
+"'":'&#39;'
+}[c]));
+}
 
-    $('close-panel').onclick = closePanel;
-    backdrop.addEventListener('click', e => {
-      if (e.target === backdrop) closePanel();
-    });
+function closeMenus() {
+document.querySelectorAll('.dropdown').forEach(m=>m.classList.remove('open'));
+document.querySelectorAll('.mode-toggle').forEach(b=>b.setAttribute('aria-expanded','false'));
+}
 
-    function field(label, id, type = 'text', required = true) {
-      return `<label class="field"><span>${label}</span><input id="${id}" type="${type}" ${required ? 'required' : ''}></label>`;
-    }
+document.querySelectorAll('.mode-toggle').forEach(btn=>btn.addEventListener('click',e=>{
+e.stopPropagation();
+let menu=$(btn.getAttribute('aria-controls'));
+let open=menu.classList.contains('open');
+closeMenus();
+if(!open) {
+menu.classList.add('open');
+btn.setAttribute('aria-expanded','true');
+}
+}));
 
-    function list(k, render) {
-      return load(k).map((x, i) =>
-        `<div class="item">${render(x)} <button class="secondary" data-delete="${i}">Delete</button></div>`
-      ).join('') || '<p class="note">Nothing saved in this browser yet.</p>';
-    }
+document.addEventListener('click',e=>{
+if(!e.target.closest('.mode-item')) closeMenus();
+});
 
-    function deletions(k, rerender) {
-      body.querySelectorAll('[data-delete]').forEach(b => {
-        b.onclick = () => {
-          let a = load(k);
-          a.splice(Number(b.dataset.delete), 1);
-          save(k, a);
-          rerender();
-        };
-      });
-    }
+document.addEventListener('keydown',e=>{
+if(e.key==='Escape') {
+closeMenus();
+closePanel();
+}
+if(e.key==='Tab' && backdrop.classList.contains('open')) {
+const items=[...backdrop.querySelectorAll('button,input,select,textarea,a[href],[tabindex]:not([tabindex="-1"])')]
+.filter(x=>!x.disabled && x.getClientRects().length);
+if(items.length) {
+let first=items[0],last=items[items.length-1];
+if(e.shiftKey && document.activeElement===first) {
+e.preventDefault();last.focus();
+} else if(!e.shiftKey && document.activeElement===last) {
+e.preventDefault();first.focus();
+}
+}
+}
+});
 
-    function booking() {
-      const render = () => openPanel('Appointment Booking', `
-        <p class="note">Demo bookings are stored only in this browser. They do not reserve a real appointment.</p>
-        <form id="booking-form">
-          ${field('Name', 'b-name')}
-          ${field('Date', 'b-date', 'date')}
-          ${field('Time', 'b-time', 'time')}
-          <label class="field"><span>Service</span>
-            <select id="b-service">
-              <option>Haircut</option><option>Hair Color</option>
-              <option>Highlights</option><option>Consultation</option><option>Other</option>
-            </select>
-          </label>
-          <button class="primary">Save Demo Booking</button>
-        </form>
-        <h3>Saved Appointments</h3>
-        ${list('booking', x => `<strong>${escapeHTML(x.name)}</strong><p>${escapeHTML(x.date)} at ${escapeHTML(x.time)} — ${escapeHTML(x.service)}</p>`)}
-      `, () => {
-        $('b-date').min = new Date().toISOString().slice(0, 10);
-        $('booking-form').onsubmit = e => {
-          e.preventDefault();
-          let x = {
-            name: $('b-name').value.trim(),
-            date: $('b-date').value,
-            time: $('b-time').value,
-            service: $('b-service').value
-          };
-          if (!x.name || !x.date || !x.time) return;
-          save('booking', [...load('booking'), x]);
-          render();
-        };
-        deletions('booking', render);
-      });
-      render();
-    }
+let returnFocus=null;
 
-    function client() {
-      openPanel('Client Information', `
-        <p class="note">Privacy notice: This demo does not securely store personal or medical information. Do not enter real client allergies, medications, or other sensitive details.</p>
-        <form id="client-form">
-          ${field('Name (use a fictional name for testing)', 'c-name')}
-          ${field('Email (demo only)', 'c-email', 'email', false)}
-          ${field('Phone (demo only)', 'c-phone', 'tel', false)}
-          <button class="primary">Save Demo Contact</button>
-        </form>
-        <p id="client-message" role="status"></p>
-      `, () => {
-        $('client-form').onsubmit = e => {
-          e.preventDefault();
-          const name = $('c-name').value.trim();
-          if (!name) return;
-          $('client-message').textContent = `Demo contact ${name} entered. Sensitive client information is not stored.`;
-          $('client-form').reset();
-        };
-      });
-    }
+function openPanel(title,markup,setup) {
+returnFocus=document.activeElement;
+closeMenus();
+$('panel-title').textContent=title;
+body.innerHTML=markup;
+backdrop.hidden=false;
+backdrop.classList.add('open');
+document.body.style.overflow='hidden';
+if(setup) setup();
+$('close-panel').focus();
+}
 
-    function gallery() {
-      openPanel('Capture Your Prism — Photo Gallery', `
-        <p class="note">Choose hairstyle photos to preview. Photos stay on your device and are not uploaded.</p>
-        <label class="photo-picker" for="photo-upload">Choose a Photo</label>
-        <input class="visually-hidden-file" type="file" id="photo-upload" accept="image/*" multiple aria-describedby="photo-feedback">
-        <p id="photo-feedback" role="status">No photos selected yet.</p>
-        <div id="gallery-images" class="actions"></div>
-      `, () => {
-        $('photo-upload').onchange = e => {
-          let count = 0;
-          for (const f of e.target.files) {
-            if (!f.type.startsWith('image/')) continue;
-            const url = URL.createObjectURL(f);
-            const img = document.createElement('img');
-            img.src = url;
-            img.alt = 'Selected hairstyle photo: ' + f.name;
-            img.className = 'thumb';
-            img.onload = () => URL.revokeObjectURL(url);
-            $('gallery-images').append(img);
-            count++;
-          }
-          $('photo-feedback').textContent = count ? `${count} photo(s) selected.` : 'No photos selected yet.';
-        };
-      });
-    }
+function closePanel() {
+if(!backdrop.classList.contains('open')) return;
+backdrop.classList.remove('open');
+backdrop.hidden=true;
+document.body.style.overflow='';
+if(returnFocus && returnFocus.isConnected) returnFocus.focus();
+}
 
-    function calculator() {
-      openPanel('Hair Color Formula Calculator', `
-        <p class="note">Mixing math only. Always follow the specific manufacturer's directions and safety guidance.</p>
-        ${field('Color amount (grams)', 'color-g', 'number')}
-        ${field('Developer ratio (parts developer per 1 part color)', 'dev-ratio', 'number')}
-        <button class="primary" id="calculate">Calculate</button>
-        <p id="calc-result" role="status"></p>
-      `, () => {
-        $('color-g').min = '0.01';
-        $('color-g').step = 'any';
-        $('dev-ratio').min = '0.01';
-        $('dev-ratio').step = 'any';
-        $('dev-ratio').value = '2';
-        $('calculate').onclick = () => {
-          let c = Number($('color-g').value), r = Number($('dev-ratio').value);
-          $('calc-result').textContent = c > 0 && r > 0
-            ? `Use ${c.toFixed(1)} g color + ${(c*r).toFixed(1)} g developer = ${(c*(1+r)).toFixed(1)} g total.`
-            : 'Enter positive numbers for both fields.';
-        };
-      });
-    }
+$('close-panel').onclick=closePanel;
+backdrop.addEventListener('click',e=>{
+if(e.target===backdrop) closePanel();
+});
 
-    function scanner() {
-      openPanel('Ingredient Scanner', `
-        <p class="note">This is a manual ingredient search demo, not a verified product barcode scanner or safety assessment.</p>
-        ${field('Paste an ingredient list', 'ingredient-list')}
-        <button class="primary" id="scan">Find Common Ingredients</button>
-        <div id="scan-results" role="status"></div>
-      `, () => {
-        $('scan').onclick = () => {
-          let text = $('ingredient-list').value.toLowerCase();
-          let terms = ['water','glycerin','dimethicone','fragrance','parfum','alcohol denat','hydrogen peroxide','ammonia','ppd','panthenol','citric acid'];
-          let found = terms.filter(t => text.includes(t));
-          $('scan-results').textContent = found.length
-            ? `Found: ${found.join(', ')}. This is not an allergy or product-safety determination.`
-            : 'No listed example ingredients matched. This does not mean the product is safe.';
-        };
-      });
-    }
+function field(label,id,type='text',required=true) {
+return `<label class="field"><span>${label}</span><input id="${id}" type="${type}" ${required?'required':''}></label>`;
+}
 
-    function genericRecords(k, title, fields) {
-      const render = () => openPanel(title, `
-        <p class="note">Browser-only demo. Use fictional names and non-sensitive details; not suitable for real client or employee records.</p>
-        <form id="generic-form">
-          ${fields.map((f, i) => field(f, 'f' + i)).join('')}
-          <button class="primary">Save Demo Entry</button>
-        </form>
-        <h3>Saved Entries</h3>
-        ${list(k, x => fields.map((f, i) => `<p><strong>${escapeHTML(f)}:</strong> ${escapeHTML(x[i])}</p>`).join(''))}
-      `, () => {
-        $('generic-form').onsubmit = e => {
-          e.preventDefault();
-          const x = fields.map((_, i) => $('f' + i).value.trim());
-          if (x.some(v => !v)) return;
-          save(k, [...load(k), x]);
-          render();
-        };
-        deletions(k, render);
-      });
-      render();
-    }
+function list(k,render) {
+return load(k).map((x,i)=>`<div class="item">${render(x)} <button class="secondary" data-delete="${i}">Delete</button></div>`).join('') || '<p class="note">Nothing saved in this browser yet.</p>';
+}
 
-    function feed() {
-      const render = () => openPanel('Prism Feed', `
-        <p class="note">Local demo feed. Posts stay in this browser; no public sharing or account system is connected.</p>
-        <form id="post-form">
-          <label class="field"><span>What's on your mind?</span>
-            <textarea id="post-text" required></textarea>
-          </label>
-          <button class="primary">Post</button>
-        </form>
-        <h3>Posts</h3>
-        ${list('feed', x => `<p>${escapeHTML(x.text)}</p><small>${escapeHTML(x.date)}</small>`)}
-      `, () => {
-        $('post-form').onsubmit = e => {
-          e.preventDefault();
-          let text = $('post-text').value.trim();
-          if (!text) return;
-          save('feed', [{text, date: new Date().toLocaleString()}, ...load('feed')]);
-          render();
-        };
-        deletions('feed', render);
-      });
-      render();
-    }
+function deletions(k,rerender) {
+body.querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>{
+let a=load(k);
+a.splice(Number(b.dataset.delete),1);
+save(k,a);
+rerender();
+});
+}
 
-    function reports() {
-      let bookings = load('booking'), inv = load('inventory'), shifts = load('schedule');
-      openPanel('Reports', `
-        <p class="note">Demo data from this browser only.</p>
-        <div class="item">Appointments: <strong>${bookings.length}</strong></div>
-        <div class="item">Inventory entries: <strong>${inv.length}</strong></div>
-        <div class="item">Scheduled shifts: <strong>${shifts.length}</strong></div>
-        <button class="secondary" id="export-report">Download CSV Summary</button>
-      `, () => {
-        $('export-report').onclick = () => {
-          let csv = `Metric,Count\nAppointments,${bookings.length}\nInventory,${inv.length}\nShifts,${shifts.length}\n`;
-          download('novahue-demo-report.csv', csv, 'text/csv');
-        };
-      });
-    }
+function booking() {
+const render=()=>openPanel('Appointment Booking',`
+<p class="note">Demo bookings are stored only in this browser. They do not reserve a real appointment.</p>
+<form id="booking-form">
+${field('Name','b-name')}
+${field('Date','b-date','date')}
+${field('Time','b-time','time')}
+<label class="field"><span>Service</span>
+<select id="b-service">
+<option>Haircut</option>
+<option>Hair Color</option>
+<option>Highlights</option>
+<option>Consultation</option>
+<option>Other</option>
+</select>
+</label>
+<button class="primary">Save Demo Booking</button>
+</form>
+<h3>Saved Appointments</h3>
+${list('booking',x=>`<strong>${escapeHTML(x.name)}</strong><p>${escapeHTML(x.date)} at ${escapeHTML(x.time)} — ${escapeHTML(x.service)}</p>`)}
+`,()=>{
+$('b-date').min=new Date().toISOString().slice(0,10);
+$('booking-form').onsubmit=e=>{
+e.preventDefault();
+let x={
+name:$('b-name').value.trim(),
+date:$('b-date').value,
+time:$('b-time').value,
+service:$('b-service').value
+};
+if(!x.name||!x.date||!x.time) return;
+save('booking',[...load('booking'),x]);
+render();
+};
+deletions('booking',render);
+});
+render();
+}
 
-    function download(name, data, type) {
-      const a = document.createElement('a');
-      const url = URL.createObjectURL(new Blob([data], {type}));
-      a.href = url;
-      a.download = name;
-      a.click();
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
-    }
+function client() {
+openPanel('Client Information',`
+<p class="note">Privacy notice: This demo does not securely store personal or medical information. Do not enter real client allergies, medications, or other sensitive details.</p>
+<form id="client-form">
+${field('Name (use a fictional name for testing)','c-name')}
+${field('Email (demo only)','c-email','email',false)}
+${field('Phone (demo only)','c-phone','tel',false)}
+<button class="primary">Save Demo Contact</button>
+</form>
+<p id="client-message" role="status"></p>
+`,()=>{
+$('client-form').onsubmit=e=>{
+e.preventDefault();
+const name=$('c-name').value.trim();
+if(!name) return;
+$('client-message').textContent=`Demo contact ${name} entered. Sensitive client information is not stored.`;
+$('client-form').reset();
+};
+});
+}
 
-    function taxes() {
-      const render = () => openPanel('Tax Information — Expense Tracker', `
-        <p class="note">Demo bookkeeping only, not tax advice. Do not enter sensitive financial or taxpayer information.</p>
-        <form id="expense-form">
-          ${field('Expense description', 'expense-name')}
-          ${field('Amount ($)', 'expense-amount', 'number')}
-          <button class="primary">Add Expense</button>
-        </form>
-        <h3>Expenses</h3>
-        ${list('expenses', x => `<strong>${escapeHTML(x.name)}</strong>: $${Number(x.amount).toFixed(2)}`)}
-        <p><strong>Total: $${load('expenses').reduce((n, x) => n + Number(x.amount || 0), 0).toFixed(2)}</strong></p>
-      `, () => {
-        $('expense-amount').min = '0.01';
-        $('expense-amount').step = '0.01';
-        $('expense-form').onsubmit = e => {
-          e.preventDefault();
-          let name = $('expense-name').value.trim();
-          let amount = Number($('expense-amount').value);
-          if (!name || amount <= 0) return;
-          save('expenses', [...load('expenses'), {name, amount}]);
-          render();
-        };
-        deletions('expenses', render);
-      });
-      render();
-    }
+function gallery() {
+openPanel('Capture Your Prism — Photo Gallery',`
+<p class="note">Choose hairstyle photos to preview. Photos stay on your device and are not uploaded.</p>
+<label class="photo-picker" for="photo-upload">Choose a Photo</label>
+<input class="visually-hidden-file" type="file" id="photo-upload" accept="image/*" multiple aria-describedby="photo-feedback">
+<p id="photo-feedback" role="status">No photos selected yet.</p>
+<div id="gallery-images" class="actions"></div>
+`,()=>{
+$('photo-upload').onchange=e=>{
+let count=0;
+for(const f of e.target.files) {
+if(!f.type.startsWith('image/')) continue;
+const url=URL.createObjectURL(f);
+const img=document.createElement('img');
+img.src=url;
+img.alt='Selected hairstyle photo: '+f.name;
+img.className='thumb';
+img.onload=()=>URL.revokeObjectURL(url);
+$('gallery-images').append(img);
+count++;
+}
+$('photo-feedback').textContent=count?`${count} photo(s) selected.`:'No photos selected yet.';
+};
+});
+}
 
-    function education() {
-      openPanel('Stylist Education', `
-        <p>Explore professional learning topics:</p>
-        <div class="item"><strong>Color theory</strong><p>Levels, underlying pigment, tone, and formulation fundamentals.</p></div>
-        <div class="item"><strong>Consultations</strong><p>Goals, hair history, strand testing, and realistic maintenance plans.</p></div>
-        <div class="item"><strong>Salon operations</strong><p>Inventory, appointment scheduling, and client communication.</p></div>
-        <p class="note">Educational course videos and CE-credit verification require a future content platform.</p>
-      `);
-    }
+function calculator() {
+openPanel('Hair Color Formula Calculator',`
+<p class="note">Mixing math only. Always follow the specific manufacturer's directions and safety guidance.</p>
+${field('Color amount (grams)','color-g','number')}
+${field('Developer ratio (parts developer per 1 part color)','dev-ratio','number')}
+<button class="primary" id="calculate">Calculate</button>
+<p id="calc-result" role="status"></p>
+`,()=>{
+$('color-g').min='0.01';
+$('color-g').step='any';
+$('dev-ratio').min='0.01';
+$('dev-ratio').step='any';
+$('dev-ratio').value='2';
+$('calculate').onclick=()=>{
+let c=Number($('color-g').value),r=Number($('dev-ratio').value);
+$('calc-result').textContent=c>0&&r>0?
+`Use ${c.toFixed(1)} g color + ${(c*r).toFixed(1)} g developer = ${(c*(1+r)).toFixed(1)} g total.`:
+'Enter positive numbers for both fields.';
+};
+});
+}
 
-    function cash() {
-      openPanel('Cash Counter', `
-        <p class="note">Count cash denominations; nothing is sent to a bank or payment system.</p>
-        <form id="cash-form">
-          ${[100,50,20,10,5,1].map(n => field(`$${n} bills`, `bill-${n}`, 'number', false)).join('')}
-          ${[.25,.10,.05,.01].map((n,i) => field(`${Math.round(n*100)}¢ coins`, `coin-${i}`, 'number', false)).join('')}
-          <button class="primary">Calculate Total</button>
-        </form>
-        <p id="cash-total" role="status"></p>
-      `, () => {
-        $('cash-form').onsubmit = e => {
-          e.preventDefault();
-          let total = [100,50,20,10,5,1].reduce((a,n) => a + n*Math.max(0,Number($(`bill-${n}`).value)||0),0)
-            + [.25,.10,.05,.01].reduce((a,n,i) => a + n*Math.max(0,Number($(`coin-${i}`).value)||0),0);
-          $('cash-total').textContent = `Total cash: $${total.toFixed(2)}`;
-        };
-      });
-    }
+function scanner() {
+openPanel('Ingredient Scanner',`
+<p class="note">This is a manual ingredient search demo, not a verified product barcode scanner or safety assessment.</p>
+${field('Paste an ingredient list','ingredient-list')}
+<button class="primary" id="scan">Find Common Ingredients</button>
+<div id="scan-results" role="status"></div>
+`,()=>{
+$('scan').onclick=()=>{
+let text=$('ingredient-list').value.toLowerCase();
+let terms=['water','glycerin','dimethicone','fragrance','parfum','alcohol denat','hydrogen peroxide','ammonia','ppd','panthenol','citric acid'];
+let found=terms.filter(t=>text.includes(t));
+$('scan-results').textContent=found.length?
+`Found: ${found.join(', ')}. This is not an allergy or product-safety determination.`:
+'No listed example ingredients matched. This does not mean the product is safe.';
+};
+});
+}
 
-    const features = {
-      booking,
-      client,
-      gallery,
-      calculator,
-      scanner,
-      records: () => genericRecords('records', 'Client Records — Demo', ['Fictional client name', 'Non-sensitive service note']),
-      inventory: () => genericRecords('inventory', 'Inventory Tracking', ['Product name', 'Quantity']),
-      education,
-      feed,
-      schedule: () => genericRecords('schedule', 'Employee Scheduling', ['Fictional employee name', 'Shift date (YYYY-MM-DD)', 'Shift time']),
-      employees: () => genericRecords('employees', 'Employee Information', ['Fictional employee name', 'Role']),
-      taxes,
-      reports
-    };
+function genericRecords(k,title,fields) {
+const render=()=>openPanel(title,`
+<p class="note">Browser-only demo. Use fictional names and non-sensitive details; not suitable for real client or employee records.</p>
+<form id="generic-form">
+${fields.map((f,i)=>field(f,'f'+i)).join('')}
+<button class="primary">Save Demo Entry</button>
+</form>
+<h3>Saved Entries</h3>
+${list(k,x=>fields.map((f,i)=>`<p><strong>${escapeHTML(f)}:</strong> ${escapeHTML(x[i])}</p>`).join(''))}
+`,()=>{
+$('generic-form').onsubmit=e=>{
+e.preventDefault();
+const x=fields.map((_,i)=>$('f'+i).value.trim());
+if(x.some(v=>!v)) return;
+save(k,[...load(k),x]);
+render();
+};
+deletions(k,render);
+});
+render();
+}
 
-    document.querySelectorAll('[data-feature]').forEach(b =>
-      b.addEventListener('click', () => features[b.dataset.feature]())
-    );
+function feed() {
+const render=()=>openPanel('Prism Feed',`
+<p class="note">Local demo feed. Posts stay in this browser; no public sharing or account system is connected.</p>
+<form id="post-form">
+<label class="field"><span>What's on your mind?</span><textarea id="post-text" required></textarea></label>
+<button class="primary">Post</button>
+</form>
+<h3>Posts</h3>
+${list('feed',x=>`<p>${escapeHTML(x.text)}</p><small>${escapeHTML(x.date)}</small>`)}
+`,()=>{
+$('post-form').onsubmit=e=>{
+e.preventDefault();
+let text=$('post-text').value.trim();
+if(!text) return;
+save('feed',[{text,date:new Date().toLocaleString()},...load('feed')]);
+render();
+};
+deletions('feed',render);
+});
+render();
+}
 
-    $('open-gallery').onclick = gallery;
-    $('get-started').onclick = booking;
-    $('cash-counter-btn').onclick = cash;
+function reports() {
+let bookings=load('booking'),inv=load('inventory'),shifts=load('schedule');
+openPanel('Reports',`
+<p class="note">Demo data from this browser only.</p>
+<div class="item">Appointments: <strong>${bookings.length}</strong></div>
+<div class="item">Inventory entries: <strong>${inv.length}</strong></div>
+<div class="item">Scheduled shifts: <strong>${shifts.length}</strong></div>
+<button class="secondary" id="export-report">Download CSV Summary</button>
+`,()=>{
+$('export-report').onclick=()=>{
+let csv=`Metric,Count\nAppointments,${bookings.length}\nInventory,${inv.length}\nShifts,${shifts.length}\n`;
+download('novahue-demo-report.csv',csv,'text/csv');
+};
+});
+}
 
-    let isOpen = true;
-    $('store-status-btn').onclick = () => {
-      isOpen = !isOpen;
-      $('status-text').textContent = isOpen ? 'OPEN' : 'CLOSED';
-      $('store-status-btn').firstChild.textContent = isOpen ? '🟢 ' : '🔴 ';
-    };
-  </script>
+function download(name,data,type) {
+const a=document.createElement('a'),url=URL.createObjectURL(new Blob([data],{type}));
+a.href=url;
+a.download=name;
+a.click();
+setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+
+function taxes() {
+const render=()=>openPanel('Tax Information — Expense Tracker',`
+<p class="note">Demo bookkeeping only, not tax advice. Do not enter sensitive financial or taxpayer information.</p>
+<form id="expense-form">
+${field('Expense description','expense-name')}
+${field('Amount ($)','expense-amount','number')}
+<button class="primary">Add Expense</button>
+</form>
+<h3>Expenses</h3>
+${list('expenses',x=>`<strong>${escapeHTML(x.name)}</strong>: $${Number(x.amount).toFixed(2)}`)}
+<p><strong>Total: $${load('expenses').reduce((n,x)=>n+Number(x.amount||0),0).toFixed(2)}</strong></p>
+`,()=>{
+$('expense-amount').min='0.01';
+$('expense-amount').step='0.01';
+$('expense-form').onsubmit=e=>{
+e.preventDefault();
+let name=$('expense-name').value.trim(),amount=Number($('expense-amount').value);
+if(!name||amount<=0) return;
+save('expenses',[...load('expenses'),{name,amount}]);
+render();
+};
+deletions('expenses',render);
+});
+render();
+}
+
+function education() {
+openPanel('Stylist Education',`
+<p>Explore professional learning topics:</p>
+<div class="item"><strong>Color theory</strong><p>Levels, underlying pigment, tone, and formulation fundamentals.</p></div>
+<div class="item"><strong>Consultations</strong><p>Goals, hair history, strand testing, and realistic maintenance plans.</p></div>
+<div class="item"><strong>Salon operations</strong><p>Inventory, appointment scheduling, and client communication.</p></div>
+<p class="note">Educational course videos and CE-credit verification require a future content platform.</p>
+`);
+}
+
+function cash() {
+openPanel('Cash Counter',`
+<p class="note">Count cash denominations; nothing is sent to a bank or payment system.</p>
+<form id="cash-form">
+${[100,50,20,10,5,1].map(n=>field(`$${n} bills`,`bill-${n}`,'number',false)).join('')}
+${[.25,.10,.05,.01].map((n,i)=>field(`${Math.round(n*100)}¢ coins`,`coin-${i}`,'number',false)).join('')}
+<button class="primary">Calculate Total</button>
+</form>
+<p id="cash-total" role="status"></p>
+`,()=>{
+$('cash-form').onsubmit=e=>{
+e.preventDefault();
+let total=[100,50,20,10,5,1].reduce((a,n)=>a+n*Math.max(0,Number($(`bill-${n}`).value)||0),0)
++[.25,.10,.05,.01].reduce((a,n,i)=>a+n*Math.max(0,Number($(`coin-${i}`).value)||0),0);
+$('cash-total').textContent=`Total cash: $${total.toFixed(2)}`;
+};
+});
+}
+
+const features={
+booking,
+client,
+gallery,
+calculator,
+scanner,
+records:()=>genericRecords('records','Client Records — Demo',['Fictional client name','Non-sensitive service note']),
+inventory:()=>genericRecords('inventory','Inventory Tracking',['Product name','Quantity']),
+education,
+feed,
+schedule:()=>genericRecords('schedule','Employee Scheduling',['Fictional employee name','Shift date (YYYY-MM-DD)','Shift time']),
+employees:()=>genericRecords('employees','Employee Information',['Fictional employee name','Role']),
+taxes,
+reports,
+cash
+};
+
+document.querySelectorAll('[data-feature]').forEach(b=>
+b.addEventListener('click',()=>features[b.dataset.feature]())
+);
+
+$('open-gallery').onclick=gallery;
+$('get-started').onclick=booking;
+
+let isOpen=true;
+$('store-status-btn').onclick=()=>{
+isOpen=!isOpen;
+$('status-text').textContent=isOpen?'OPEN':'CLOSED';
+$('store-status-btn').firstChild.textContent=isOpen?'🟢 ':'🔴 ';
+};
+</script>
 </body>
 </html>
 

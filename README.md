@@ -54,9 +54,9 @@ This is a demonstration form and does not send real messages.
 All three pages were tested using WAVE. Accessibility and color contrast errors were corrected, resulting in zero reported errors and zero contrast errors on each page.
 
 ### Final Testing Checklist
-- [ ] Run WAVE on all three pages
-- [ ] Fix remaining accessibility errors
-- [ ] Verify WCAG AA color contrast
+- [x] Run WAVE on all three pages
+- [x] Fix remaining accessibility errors
+- [x] Verify WCAG AA color contrast
 - [ ] Test keyboard navigation
 - [ ] Test contact form validation
 - [ ] Test mobile layouts

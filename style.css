@@ -337,4 +337,17 @@ font-size: clamp(2.5rem, 10vw, 4rem);
 font-size: 1rem;
 }
 }
+/* Nova Hue glowing supernova background */
+.hero {
+background:
+radial-gradient(
+ellipse at 43% 42%,
+rgba(255, 104, 226, 0.95) 0%,
+rgba(182, 67, 244, 0.85) 23%,
+rgba(103, 74, 225, 0.78) 47%,
+rgba(42, 93, 197, 0.85) 73%,
+#14245d 100%
+);
+}
+
 
